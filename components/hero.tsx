@@ -4,7 +4,7 @@ import LazyVideo from "./lazy-video"
 
 export function Hero() {
   const buttonNew = (
-    <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
+    <Button asChild className="rounded-full bg-sky-400 px-6 text-white hover:bg-sky-500 shadow-lg shadow-sky-400/30">
       <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
         Chat With Us
       </a>
@@ -12,17 +12,20 @@ export function Hero() {
   )
 
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
           <div className="mb-5 flex items-center gap-2">
-            <Image src="/icons/pqrix-white.svg" alt="Pqrix logo" width={32} height={32} className="h-8 w-8" />
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">pqrix</p>
+            <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={32} height={32} className="h-8 w-8" />
+            <p className="text-sm uppercase tracking-[0.25em]">
+              <span className="text-sky-500/80">Pixel</span>
+              <span className="text-black/80">Primp</span>
+            </p>
           </div>
-          <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            <span className="block">HIGH-IMPACT</span>
-            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">3D ANIMATION</span>
-            <span className="block">FOR BRANDS</span>
+          <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-black">
+            <span className="block">SOFTWARE &</span>
+            <span className="block text-sky-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">CREATIVE STUDIO</span>
+            <span className="block">FOR DIGITAL EXCELLENCE</span>
           </h1>
           <div className="mt-6">{buttonNew}</div>
 
@@ -58,8 +61,8 @@ function PhoneCard({
   videoSrc?: string
 }) {
   return (
-    <div className="relative rounded-[28px] glass-border bg-neutral-900 p-2">
-      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
+    <div className="relative rounded-[28px] glass-border bg-white/90 p-2 shadow-lg shadow-sky-200/50">
+      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200">
         <LazyVideo
           src={
             videoSrc ??
@@ -74,11 +77,11 @@ function PhoneCard({
         />
 
         <div className="relative z-10 p-3">
-          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
+          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-sky-300/40" />
           <div className="space-y-1 px-1">
-            <div className="text-3xl font-bold leading-snug text-white/90">{title}</div>
-            <p className="text-xs text-white/70">{sub}</p>
-            <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300">
+            <div className="text-3xl font-bold leading-snug text-white drop-shadow-lg">{title}</div>
+            <p className="text-xs text-white/90 drop-shadow">{sub}</p>
+            <div className="mt-3 inline-flex items-center rounded-full bg-sky-500/90 px-2 py-0.5 text-[10px] uppercase tracking-wider text-white">
               {tone === "calm" ? "pqrix app" : tone}
             </div>
           </div>

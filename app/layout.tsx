@@ -9,13 +9,13 @@ import { Toaster } from "@/components/ui/sonner"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pqrix.com'),
+  metadataBase: new URL('https://pixelprimp.com'),
   title: {
-    default: "Pqrix | Software Development Company in Bangladesh | Web, Mobile & Desktop Solutions",
-    template: "%s | Pqrix"
+    default: "PixelPrimp | Software Development & Creative Studio | Web, Mobile, Video & Photo Editing",
+    template: "%s | PixelPrimp"
   },
   description:
-    "Leading software development company in Bangladesh offering Discovery & Strategy, Web/SaaS Development, Mobile App Development (iOS/Android), Custom 3D Web/XR, and Desktop Application Solutions. Local payment gateway integration (bKash/Nagad). Affordable pricing starting ৳8,500.",
+    "PixelPrimp - Your complete software development and creative studio in Bangladesh. We offer web/mobile development, 3D animation, video editing, photo editing, and graphic design. From code to creativity, we handle it all. Affordable pricing starting ৳8,500.",
   keywords: [
     // Company & Location
     "software development company Bangladesh",
@@ -597,13 +597,13 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <div className="fixed inset-0 z-0 bg-black">
+        <div className="fixed inset-0 z-0 bg-gradient-to-br from-white via-sky-50 to-white">
           <Plasma
-            color="#8b5cf6"
+            color="#3b82f6"
             speed={0.8}
             direction="forward"
             scale={1.5}
-            opacity={0.4}
+            opacity={0.15}
             mouseInteractive={true}
           />
         </div>

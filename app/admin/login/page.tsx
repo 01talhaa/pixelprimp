@@ -40,23 +40,23 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-gray-900 to-black p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-50 via-white to-sky-100 p-4">
       <div className="w-full max-w-md">
-        <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-gray-700">
+        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-sky-200">
           <div className="mb-8 text-center">
-            <h1 className="text-4xl font-bold text-white mb-2">Pqrix Admin</h1>
-            <p className="text-gray-400">Sign in to your account</p>
+            <h1 className="text-4xl font-bold text-sky-600 mb-2">Pqrix Admin</h1>
+            <p className="text-gray-600">Sign in to your account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="p-4 text-sm text-red-200 bg-red-900/30 border border-red-500/50 rounded-lg">
+              <div className="p-4 text-sm text-red-700 bg-red-50 border border-red-300 rounded-lg">
                 {error}
               </div>
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
               </label>
               <input
@@ -67,12 +67,12 @@ export default function AdminLoginPage() {
                 placeholder="abstalha@gmail.com"
                 required
                 autoComplete="email"
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                className="w-full px-4 py-3 bg-white border border-sky-200 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
               <input
@@ -83,14 +83,14 @@ export default function AdminLoginPage() {
                 placeholder="Enter your password"
                 required
                 autoComplete="current-password"
-                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                className="w-full px-4 py-3 bg-white border border-sky-200 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="w-full py-3 px-4 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-sky-300/40"
             >
               {loading ? (
                 <span className="flex items-center justify-center">

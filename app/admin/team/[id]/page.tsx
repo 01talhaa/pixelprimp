@@ -30,18 +30,18 @@ export default function EditTeamMemberPage({ params }: { params: Promise<{ id: s
   }, [id])
 
   if (loading) {
-    return <div className="text-white text-center py-12">Loading...</div>
+    return <div className="text-black text-center py-12">Loading...</div>
   }
 
   if (!teamMember) {
-    return <div className="text-white text-center py-12">Team member not found</div>
+    return <div className="text-black text-center py-12">Team member not found</div>
   }
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-white">Edit Team Member</h1>
-        <p className="text-white/60 mt-2">Update team member information</p>
+        <h1 className="text-3xl font-bold text-black">Edit Team Member</h1>
+        <p className="text-gray-600 mt-2">Update team member information</p>
       </div>
       <TeamMemberForm initialData={teamMember} isEdit={true} />
     </div>

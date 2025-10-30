@@ -14,8 +14,8 @@ interface FooterContent {
 }
 
 const defaultContent: FooterContent = {
-  tagline: "Experience 3D animation like never before. We craft cinematic visuals for brands and products.",
-  copyright: "© 2025 — Pqrix",
+  tagline: "Experience software development and creative excellence like never before. We craft innovative solutions for brands and businesses.",
+  copyright: "© 2025 — PixelPrimp",
 }
 
 export function AppverseFooter() {
@@ -37,13 +37,13 @@ export function AppverseFooter() {
   }, [])
 
   return (
-    <section className="text-white">
+    <section className="text-black bg-gradient-to-b from-white via-sky-50 to-white">
       {/* Contact CTA */}
       <div className="container mx-auto px-4 pt-12 sm:pt-16">
         <div className="flex justify-center">
           <Button
             asChild
-            className="rounded-full bg-lime-400 px-6 py-2 text-sm font-medium text-black shadow-[0_0_20px_rgba(163,230,53,0.35)] hover:bg-lime-300"
+            className="rounded-full bg-sky-500 px-6 py-2 text-sm font-medium text-white shadow-lg shadow-sky-400/30 hover:bg-sky-600"
           >
             <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
               Contact us
@@ -54,24 +54,24 @@ export function AppverseFooter() {
 
       {/* Download the app */}
       <div className="container mx-auto px-4 py-12 sm:py-16">
-        <Card className="relative overflow-hidden rounded-3xl liquid-glass p-6 sm:p-10">
+        <Card className="relative overflow-hidden rounded-3xl liquid-glass p-6 sm:p-10 shadow-lg shadow-sky-200/40">
           <div className="relative grid items-center gap-8 md:grid-cols-2">
             {/* Left copy */}
             <div>
-              <p className="mb-2 text-[11px] tracking-widest text-lime-300">STREAMLINE YOUR LAUNCHES</p>
-              <h3 className="text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Preview &amp; approve high-end 3D visuals from anywhere
+              <p className="mb-2 text-[11px] tracking-widest text-sky-600">STREAMLINE YOUR WORKFLOW</p>
+              <h3 className="text-2xl font-bold leading-tight text-black sm:text-3xl">
+                Review &amp; approve projects from anywhere
               </h3>
-              <p className="mt-2 max-w-prose text-sm text-neutral-400">
-                Review renders, leave timestamped comments, and approve scenes from anywhere. Using our revision &amp;
-                collaboration tools
+              <p className="mt-2 max-w-prose text-sm text-gray-700">
+                Track progress, leave feedback, and approve deliverables from anywhere. Using our collaboration &amp;
+                project management tools
               </p>
             </div>
 
             {/* Right mockup */}
             <div className="mx-auto w-full max-w-[320px]">
-              <div className="relative rounded-[28px] liquid-glass p-2 shadow-2xl">
-                <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
+              <div className="relative rounded-[28px] liquid-glass p-2 shadow-2xl shadow-sky-400/30">
+                <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200">
                   {/* Lazy-loaded video fills the screen */}
                   <LazyVideo
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Timeline%202-YFaCK7cEiHWSMRv8XEHaLCoYj2SUAi.mp4"
@@ -80,15 +80,15 @@ export function AppverseFooter() {
                     loop={true}
                     muted={true}
                     playsInline={true}
-                    aria-label="Pqrix app preview - approvals made easy"
+                    aria-label="PixelPrimp app preview - approvals made easy"
                   />
                   {/* On-screen content */}
                   <div className="relative p-3">
-                    <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
+                    <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-sky-300/40" />
                     <div className="space-y-1 px-1">
-                      <div className="text-5xl font-extrabold text-lime-300">Approvals Made Easy</div>
-                      <p className="text-xs text-white/80">From feedback to approval in a single flow</p>
-                      <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300">
+                      <div className="text-5xl font-extrabold text-sky-500 drop-shadow-lg">Collaboration Made Easy</div>
+                      <p className="text-xs text-white drop-shadow">From concept to delivery in a single flow</p>
+                      <div className="mt-3 inline-flex items-center rounded-full bg-sky-500/90 px-2 py-0.5 text-[10px] uppercase tracking-wider text-white">
                         Zero Hassle
                       </div>
                     </div>
@@ -101,26 +101,29 @@ export function AppverseFooter() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 pb-20 md:pb-10">
+      <footer className="border-t border-sky-200 pb-20 md:pb-10 bg-white">
         <div className="container mx-auto px-4 py-10">
           <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
             {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/pqrix-white.svg" alt="Pqrix logo" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-lime-300">Pqrix</span>
+                <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={24} height={24} className="h-6 w-6" />
+                <span className="text-xl font-semibold">
+                  <span className="text-sky-500">Pixel</span>
+                  <span className="text-black">Primp</span>
+                </span>
               </div>
-              <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>
+              <p className="max-w-sm text-sm text-gray-600">{content.tagline}</p>
             </div>
 
             {/* Navigation */}
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-2">
               <div>
-                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Navigation</h5>
-                <ul className="space-y-2 text-sm text-neutral-300">
+                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-600">Navigation</h5>
+                <ul className="space-y-2 text-sm text-gray-700">
                   {["Home", "Features", "Testimonials", "Pricing", "Blog", "Download"].map((item) => (
                     <li key={item}>
-                      <Link href={`#${item.toLowerCase()}`} className="hover:text-lime-300">
+                      <Link href={`#${item.toLowerCase()}`} className="hover:text-sky-500 transition-colors">
                         {item}
                       </Link>
                     </li>
@@ -128,52 +131,52 @@ export function AppverseFooter() {
                 </ul>
               </div>
               <div>
-                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Social media</h5>
-                <ul className="space-y-2 text-sm text-neutral-300">
+                <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-gray-600">Social media</h5>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center gap-2">
-                    <Twitter className="h-4 w-4 text-neutral-400" />
+                    <Twitter className="h-4 w-4 text-sky-500" />
                     <a
-                      href="https://twitter.com/pqrix"
+                      href="https://twitter.com/pixelprimp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Follow pqrix on Twitter"
+                      className="hover:text-sky-500 transition-colors"
+                      aria-label="Follow PixelPrimp on Twitter"
                     >
                       X/Twitter
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Youtube className="h-4 w-4 text-neutral-400" />
+                    <Youtube className="h-4 w-4 text-sky-500" />
                     <a
-                      href="https://www.youtube.com/@pqrixinternational"
+                      href="https://www.youtube.com/@pixelprimp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Subscribe to pqrix on YouTube"
+                      className="hover:text-sky-500 transition-colors"
+                      aria-label="Subscribe to PixelPrimp on YouTube"
                     >
                       YouTube
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Instagram className="h-4 w-4 text-neutral-400" />
+                    <Instagram className="h-4 w-4 text-sky-500" />
                     <a
-                      href="https://instagram.com/pqrix"
+                      href="https://instagram.com/pixelprimp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Follow pqrix on Instagram"
+                      className="hover:text-sky-500 transition-colors"
+                      aria-label="Follow PixelPrimp on Instagram"
                     >
                       Instagram
                     </a>
                   </li>
                   <li className="flex items-center gap-2">
-                    <MessageCircle className="h-4 w-4 text-neutral-400" />
+                    <MessageCircle className="h-4 w-4 text-sky-500" />
                     <a
-                      href="https://threads.com/pqrix"
+                      href="https://threads.com/pixelprimp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-lime-300"
-                      aria-label="Follow pqrix on Threads"
+                      className="hover:text-sky-500 transition-colors"
+                      aria-label="Follow PixelPrimp on Threads"
                     >
                       Threads
                     </a>

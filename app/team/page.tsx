@@ -53,24 +53,24 @@ export default async function TeamPage() {
   const departments = getAllDepartments(teamMembers)
   return (
     <>
-      <main className="min-h-[100dvh] text-white">
+      <main className="min-h-[100dvh] bg-white text-black">
         <SiteHeader />
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16 sm:py-24">
+        <section className="container mx-auto px-4 py-16 sm:py-24 bg-gradient-to-b from-white via-sky-50 to-white">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
+            <h1 className="mb-6 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-black">
               <span className="block">Meet Our</span>
-              <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">Creative Team</span>
+              <span className="block text-sky-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">Creative Team</span>
             </h1>
-            <p className="text-lg text-gray-300 sm:text-xl">
+            <p className="text-lg text-gray-700 sm:text-xl">
               Talented professionals passionate about bringing your vision to life through exceptional creative work
             </p>
           </div>
         </section>
 
         {/* Department Filter */}
-        <section className="container mx-auto px-4 pb-8">
+        <section className="container mx-auto px-4 pb-8 bg-gradient-to-b from-sky-50 to-white">
           <div className="flex flex-wrap justify-center gap-3">
             {departments.map((dept) => (
               <Button
@@ -78,8 +78,8 @@ export default async function TeamPage() {
                 variant={dept === "All" ? "default" : "outline"}
                 className={
                   dept === "All"
-                    ? "rounded-full bg-lime-400 text-black hover:bg-lime-300"
-                    : "rounded-full border-white/20 bg-white/5 text-white hover:bg-white/10"
+                    ? "rounded-full bg-sky-500 text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
+                    : "rounded-full border-sky-200 bg-white text-black hover:bg-sky-50"
                 }
               >
                 {dept}
@@ -89,25 +89,25 @@ export default async function TeamPage() {
         </section>
 
         {/* Team Grid */}
-        <section className="container mx-auto px-4 pb-16 sm:pb-24">
+        <section className="container mx-auto px-4 pb-16 sm:pb-24 bg-gradient-to-b from-white to-sky-50">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {teamMembers.map((member) => (
               <Link key={member.id} href={`/team/${member.id}`}>
-                <Card className="group liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden transition-all hover:border-white/20 hover:bg-white/10 h-full">
-                  <div className="relative aspect-square overflow-hidden bg-gray-900">
+                <Card className="group liquid-glass border border-sky-200 bg-white/80 backdrop-blur-xl overflow-hidden transition-all hover:border-sky-300 hover:bg-white/90 h-full shadow-lg shadow-sky-200/30">
+                  <div className="relative aspect-square overflow-hidden bg-sky-100">
                     <img
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-sky-900/60 via-sky-900/10 to-transparent" />
 
                     {/* Social Links Overlay */}
                     <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                        className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white text-sky-600"
                         asChild
                       >
                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
@@ -117,7 +117,7 @@ export default async function TeamPage() {
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                        className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white text-sky-600"
                         asChild
                       >
                         <a href={member.twitter} target="_blank" rel="noopener noreferrer">
@@ -127,7 +127,7 @@ export default async function TeamPage() {
                       <Button
                         size="icon"
                         variant="ghost"
-                        className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                        className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white text-sky-600"
                         asChild
                       >
                         <a href={`mailto:${member.email}`}>
@@ -138,18 +138,18 @@ export default async function TeamPage() {
 
                     {/* Department Badge */}
                     <div className="absolute top-3 right-3">
-                      <span className="inline-flex items-center rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-xs font-medium text-lime-400 border border-lime-400/30">
+                      <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-sky-600 border border-sky-300">
                         {member.department}
                       </span>
                     </div>
                   </div>
 
                   <div className="p-5">
-                    <h3 className="mb-1 text-xl font-bold text-white group-hover:text-lime-400 transition-colors">
+                    <h3 className="mb-1 text-xl font-bold text-black group-hover:text-sky-500 transition-colors">
                       {member.name}
                     </h3>
-                    <p className="mb-3 text-sm font-medium text-lime-400">{member.role}</p>
-                    <p className="text-sm text-gray-300 line-clamp-2">{member.bio}</p>
+                    <p className="mb-3 text-sm font-medium text-sky-600">{member.role}</p>
+                    <p className="text-sm text-gray-700 line-clamp-2">{member.bio}</p>
                   </div>
                 </Card>
               </Link>

@@ -106,26 +106,24 @@ export function Pricing() {
   }, [])
 
   return (
-    <section id="pricing" className="text-white" itemScope itemType="https://schema.org/PriceSpecification">
+    <section id="pricing" className="text-black bg-gradient-to-b from-white via-sky-50 to-white" itemScope itemType="https://schema.org/PriceSpecification">
       <div className="container mx-auto px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <div
-            className="mx-auto mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium"
-            style={{ backgroundColor: "rgba(198,255,58,0.12)", color: ACCENT }}
+            className="mx-auto mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-sky-100 text-sky-600 border border-sky-200"
           >
             Our Pricing and Packages
           </div>
-          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl" itemProp="name">
+          <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl text-black" itemProp="name">
             Our Pricing.
           </h2>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-neutral-400" itemProp="description">
+          <p className="mx-auto mt-2 max-w-xl text-sm text-gray-600" itemProp="description">
             No hidden fees. Just world-class animation that fits your budget.
           </p>
           <div className="mt-6">
             <Button
               asChild
-              className="rounded-full px-5 text-neutral-900 hover:brightness-95"
-              style={{ backgroundColor: "#f2f2f2" }}
+              className="rounded-full px-5 bg-sky-500 text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
             >
               <Link href="https://wa.link/rc25na" target="_blank">
                 Contact now
@@ -142,21 +140,20 @@ export function Pricing() {
             itemType="https://schema.org/Offer"
           >
             <div
-              className="absolute right-4 top-11 rounded-full px-2 py-0.5 text-[10px]"
-              style={{ backgroundColor: "#1f1f1f", color: "#d4d4d4" }}
+              className="absolute right-4 top-11 rounded-full px-2 py-0.5 text-[10px] bg-sky-100 text-sky-600 border border-sky-200"
             >
               {PRICES[currency].save}
             </div>
 
             <CardHeader className="space-y-3 pb-4">
-              <div className="text-sm font-semibold text-neutral-200" itemProp="name">
+              <div className="text-sm font-semibold text-black" itemProp="name">
                 Startup
               </div>
-              <div className="flex items-end gap-2 text-neutral-100">
+              <div className="flex items-end gap-2 text-black">
                 <div className="text-xl font-bold tracking-tight" itemProp="price">
                   {PRICES[currency].startup}
                 </div>
-                <span className="pb-0.5 text-[11px] text-neutral-400">per video</span>
+                <span className="pb-0.5 text-[11px] text-gray-600">per video</span>
                 <meta itemProp="priceCurrency" content={currency} />
               </div>
               <div className="flex gap-2">
@@ -164,19 +161,13 @@ export function Pricing() {
                   type="button"
                   onClick={() => setOpenPlan("Startup")}
                   onTouchStart={() => setOpenPlan("Startup")}
-                  className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                  style={{
-                    backgroundColor: "#0a0a0a",
-                    color: "#ffffff",
-                    border: "1px solid #333",
-                  }}
+                  className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors bg-white text-black border border-sky-300 hover:bg-sky-50"
                 >
                   View Example
                 </Button>
                 <Button
                   asChild
-                  className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                  style={{ backgroundColor: ACCENT }}
+                  className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 shadow-lg shadow-sky-400/30 transition-[box-shadow,transform,filter] active:translate-y-[1px]"
                 >
                   <Link href="/checkout?plan=startup">Select</Link>
                 </Button>

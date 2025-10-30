@@ -18,10 +18,10 @@ export default function Page() {
   const pricingStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPageElement",
-    "@id": "https://pqrix.com/#pricing",
+    "@id": "https://pixelprimp.com/#pricing",
     name: "Pricing Plans",
-    description: "Software development pricing plans for Discovery, Web/SaaS, Mobile, 3D Web, and Desktop solutions",
-    url: "https://pqrix.com/#pricing",
+    description: "Software development and creative services pricing plans including web/mobile development, video editing, photo editing, and 3D animation",
+    url: "https://pixelprimp.com/#pricing",
     mainEntity: {
       "@type": "PriceSpecification",
       name: "Software Development Services",
@@ -84,7 +84,7 @@ export default function Page() {
 
   return (
     <>
-      <main className="min-h-[100dvh] text-white">
+      <main className="min-h-[100dvh] bg-white text-black">
         <SiteHeader />
         <Hero />
         <Features />

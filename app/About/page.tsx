@@ -5,14 +5,14 @@ export default function AboutPage() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Pqrix International",
-    url: "https://pqrix.com",
-    logo: "https://pqrix.com/logo.png",
+    name: "PixelPrimp Studio",
+    url: "https://pixelprimp.com",
+    logo: "https://pixelprimp.com/logo.png",
     description:
-      "Pqrix International is a 3D product animation agency serving clients in Miami, Los Angeles, New York, Canada, and the UK.",
+      "PixelPrimp is a complete software development and creative studio offering web/mobile development, 3D animation, video editing, photo editing, and graphic design services worldwide.",
     sameAs: [
-      "https://www.instagram.com/pqrix",
-      "https://www.linkedin.com/company/pqrix",
+      "https://www.instagram.com/pixelprimp",
+      "https://www.linkedin.com/company/pixelprimp",
     ],
     address: {
       "@type": "PostalAddress",
@@ -47,34 +47,34 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-black text-white py-20 px-6 md:px-12 lg:px-20 text-center">
+      <section className="relative bg-gradient-to-b from-sky-50 to-white text-black py-20 px-6 md:px-12 lg:px-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          About Pqrix International
+          About <span className="text-sky-500">Pixel</span><span className="text-black">Primp</span> Studio
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80">
-          Pioneering the future of 3D product animation for global brands.
+        <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-700">
+          Your complete software development and creative production partner for digital excellence.
         </p>
       </section>
 
       {/* Feature Grid */}
-      <section className="py-16 bg-neutral-900 text-white px-6 md:px-12 lg:px-20">
+      <section className="py-16 bg-white text-black px-6 md:px-12 lg:px-20">
         <div className="grid gap-12 md:grid-cols-3">
           {[
             {
-              title: "3D Product Animation",
-              desc: "Photo-realistic animations that showcase your products in stunning detail.",
+              title: "Software Development",
+              desc: "Custom web, mobile, and desktop applications built with cutting-edge technology.",
+            },
+            {
+              title: "Video Production",
+              desc: "Professional video editing, motion graphics, and 3D animation services.",
+            },
+            {
+              title: "Creative Design",
+              desc: "Photo editing, graphic design, and visual content creation for brands.",
             },
             {
               title: "Global Reach",
-              desc: "Serving Miami, LA, New York, Canada, and the UK with world-class visuals.",
-            },
-            {
-              title: "Cutting-edge Technology",
-              desc: "Using the latest rendering engines and motion design tools.",
-            },
-            {
-              title: "Brand Storytelling",
-              desc: "Helping brands communicate their vision through immersive 3D visuals.",
+              desc: "Serving clients worldwide with world-class software and creative solutions.",
             },
             {
               title: "Collaborative Workflow",
@@ -87,26 +87,26 @@ export default function AboutPage() {
           ].map((feature, index) => (
             <div
               key={index}
-              className="bg-neutral-800 p-6 rounded-2xl shadow-lg hover:scale-105 transform transition-all duration-300"
+              className="bg-sky-50 border border-sky-200 p-6 rounded-2xl shadow-lg shadow-sky-200/30 hover:scale-105 hover:shadow-xl hover:shadow-sky-300/40 transform transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="opacity-80">{feature.desc}</p>
+              <h3 className="text-xl font-semibold mb-3 text-sky-600">{feature.title}</h3>
+              <p className="text-gray-700">{feature.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black text-center text-white px-6">
+      <section className="py-20 bg-gradient-to-b from-sky-50 to-white text-center text-black px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Ready to Elevate Your Brand?
         </h2>
-        <p className="text-lg opacity-80 mb-8">
+        <p className="text-lg text-gray-700 mb-8">
           Let Pqrix International bring your products to life.
         </p>
         <a
           href="/contact"
-          className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-neutral-200 transition-all"
+          className="bg-sky-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-sky-600 shadow-lg shadow-sky-300/40 transition-all inline-block"
         >
           Get in Touch
         </a>
