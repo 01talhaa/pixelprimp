@@ -9,6 +9,7 @@ import Image from "next/image"
 import { toast } from "sonner"
 import Link from "next/link"
 import { fetchWithAuth, setupAutoRefresh } from "@/lib/client-auth"
+import { InquiriesSection } from "@/components/inquiries-section"
 
 interface Client {
   _id: string
@@ -193,6 +194,11 @@ export default function ClientDashboard() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Inquiries Section */}
+        <div>
+          <InquiriesSection />
+        </div>
 
         {/* Projects Section */}
         <div>

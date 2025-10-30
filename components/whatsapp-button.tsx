@@ -10,7 +10,7 @@ export function WhatsAppButton() {
 
   const whatsappNumbers = [
     { number: "8801401658685", label: "+880 1401-658685" },
-    { number: "8801878377992", label: "+880 1878-377992" },
+    { number: "8801682888934", label: "+880 1682-888934" },
   ]
 
   const handleWhatsAppClick = (number: string) => {

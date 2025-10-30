@@ -326,7 +326,7 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ id:
               size="lg"
               className="rounded-full bg-sky-500 px-8 text-base font-semibold text-white hover:bg-sky-600 shadow-lg shadow-sky-300/40"
             >
-              <Link href="https://wa.link/65mf3i">Contact Us</Link>
+              <Link href="https://wa.me/8801401658685?text=Hi!%20I'd%20like%20to%20get%20in%20touch">Contact Us</Link>
             </Button>
           </Card>
         </section>

@@ -125,7 +125,7 @@ export function Pricing() {
               asChild
               className="rounded-full px-5 bg-sky-500 text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
             >
-              <Link href="https://wa.link/rc25na" target="_blank">
+              <Link href="https://wa.me/8801401658685?text=Hi!%20I'm%20interested%20in%20your%20services" target="_blank">
                 Contact now
               </Link>
             </Button>

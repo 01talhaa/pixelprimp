@@ -256,7 +256,7 @@ export function SiteHeader() {
                           className="w-full border-sky-200 bg-white text-black font-medium rounded-lg px-6 py-2.5
                                      hover:bg-sky-50 transition-all"
                         >
-                          <Link href="https://wa.link/65mf3i">Get a Quote</Link>
+                          <Link href="https://wa.me/8801401658685?text=Hi!%20I'd%20like%20to%20get%20a%20quote">Get a Quote</Link>
                         </Button>
                       </>
                     )

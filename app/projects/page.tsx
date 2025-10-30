@@ -446,7 +446,7 @@ export default async function ProjectsPage() {
               size="lg"
               className="rounded-full bg-lime-400 px-8 text-base font-semibold text-black hover:bg-lime-300"
             >
-              <Link href="https://wa.link/65mf3i">Start Your Project</Link>
+              <Link href="https://wa.me/8801401658685?text=Hi!%20I'd%20like%20to%20start%20a%20project">Start Your Project</Link>
             </Button>
           </Card>
         </section>

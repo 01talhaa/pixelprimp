@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Check, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
-import { BookingForm } from "@/components/booking-form"
 import { notFound } from "next/navigation"
 import { getAllServicesForBuild, getServiceByIdForBuild } from "@/lib/get-services"
 import * as LucideIcons from "lucide-react"
@@ -278,19 +277,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </Card>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* Booking Form */}
-        {service.packages && (
-          <section id="booking" className="container mx-auto px-4 pb-16 sm:pb-24">
-            <Card className="liquid-glass-enhanced border border-white/15 bg-white/10 backdrop-blur-xl p-8 sm:p-12 max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-4 text-center">Book This Service</h2>
-              <p className="text-gray-300 mb-8 text-center">
-                Fill out the form below and we'll get back to you within 24 hours
-              </p>
-              <BookingForm serviceId={service.id} serviceName={service.title} packages={service.packages} />
-            </Card>
           </section>
         )}
 

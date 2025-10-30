@@ -45,7 +45,7 @@ export function AppverseFooter() {
             asChild
             className="rounded-full bg-sky-500 px-6 py-2 text-sm font-medium text-white shadow-lg shadow-sky-400/30 hover:bg-sky-600"
           >
-            <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/8801401658685?text=Hi!%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer">
               Contact us
             </a>
           </Button>

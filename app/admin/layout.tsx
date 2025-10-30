@@ -7,7 +7,7 @@ import { useAuth } from "@/lib/auth"
 import { Button } from "@/components/ui/button"
 import { useRouter, usePathname } from "next/navigation"
 import Link from "next/link"
-import { LayoutDashboard, Briefcase, FolderKanban, Users, LogOut, FlaskConical, UserCircle } from "lucide-react"
+import { LayoutDashboard, Briefcase, FolderKanban, Users, LogOut, FlaskConical, UserCircle, FileText } from "lucide-react"
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const { logout, user } = useAuth()
@@ -74,6 +74,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 >
                   <UserCircle className="w-4 h-4" />
                   Clients
+                </Link>
+                <Link
+                  href="/admin/inquiries"
+                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                >
+                  <FileText className="w-4 h-4" />
+                  Inquiries
                 </Link>
                 <Link
                   href="/admin/test"

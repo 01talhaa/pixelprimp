@@ -500,7 +500,7 @@ export default async function ServicesPage() {
               size="lg"
               className="rounded-full bg-sky-500 px-8 text-base font-semibold text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
             >
-              <Link href="https://wa.link/65mf3i">Get in Touch</Link>
+              <Link href="https://wa.me/8801401658685?text=Hi!%20I'm%20interested%20in%20your%20services">Get in Touch</Link>
             </Button>
           </Card>
         </section>
