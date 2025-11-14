@@ -23,6 +23,7 @@ if (!global.mongoose) {
 
 async function dbConnect() {
   if (cached.conn) {
+    console.log('Using cached MongoDB connection')
     return cached.conn
   }
 
@@ -31,12 +32,15 @@ async function dbConnect() {
       bufferCommands: false,
     }
 
+    console.log('Creating new MongoDB connection to:', MONGO_URI.replace(/:\/\/([^:]+):([^@]+)@/, '://***:***@'))
     cached.promise = mongoose.connect(MONGO_URI, opts)
   }
 
   try {
     cached.conn = await cached.promise
+    console.log('MongoDB connected successfully')
   } catch (e) {
+    console.error('MongoDB connection error:', e)
     cached.promise = null
     throw e
   }
