@@ -84,7 +84,7 @@ export default function Page() {
 
   return (
     <>
-      <main className="min-h-[100dvh] bg-white text-black">
+      <main className="min-h-[100dvh] bg-[#08090A] text-[#F4F7F5]">
         <SiteHeader />
         <Hero />
         <Features />

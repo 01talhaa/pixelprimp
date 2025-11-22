@@ -47,17 +47,17 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-sky-50 to-white text-black py-20 px-6 md:px-12 lg:px-20 text-center">
+      <section className="relative bg-gradient-to-b from-[#0F1113] to-[#08090A] text-[#F4F7F5] py-20 px-6 md:px-12 lg:px-20 text-center animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          About <span className="text-sky-500">Pixel</span><span className="text-black">Primp</span> Studio
+          About <span className="text-[#008CE2]">Pixel</span><span className="text-[#F4F7F5]">Primp</span> Studio
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-700">
+        <p className="text-lg md:text-xl max-w-2xl mx-auto text-[#F4F7F5]/80">
           Your complete software development and creative production partner for digital excellence.
         </p>
       </section>
 
       {/* Feature Grid */}
-      <section className="py-16 bg-white text-black px-6 md:px-12 lg:px-20">
+      <section className="py-16 bg-[#08090A] text-[#F4F7F5] px-6 md:px-12 lg:px-20 animate-fade-in-up">
         <div className="grid gap-12 md:grid-cols-3">
           {[
             {
@@ -87,26 +87,26 @@ export default function AboutPage() {
           ].map((feature, index) => (
             <div
               key={index}
-              className="bg-sky-50 border border-sky-200 p-6 rounded-2xl shadow-lg shadow-sky-200/30 hover:scale-105 hover:shadow-xl hover:shadow-sky-300/40 transform transition-all duration-300"
+              className="bg-[#0F1113]/80 border border-[#1F2329] p-6 rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transform transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-3 text-sky-600">{feature.title}</h3>
-              <p className="text-gray-700">{feature.desc}</p>
+              <h3 className="text-xl font-semibold mb-3 text-[#008CE2]">{feature.title}</h3>
+              <p className="text-[#F4F7F5]/80">{feature.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-sky-50 to-white text-center text-black px-6">
+      <section className="py-20 bg-gradient-to-b from-[#0F1113] to-[#08090A] text-center text-[#F4F7F5] px-6 animate-fade-in-up">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Ready to Elevate Your Brand?
         </h2>
-        <p className="text-lg text-gray-700 mb-8">
+        <p className="text-lg text-[#F4F7F5]/80 mb-8">
           Let Pqrix International bring your products to life.
         </p>
         <a
           href="/contact"
-          className="bg-sky-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-sky-600 shadow-lg shadow-sky-300/40 transition-all inline-block"
+          className="bg-[#008CE2] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#06B9D0] hover:scale-105 shadow-lg transition-all duration-300 inline-block"
         >
           Get in Touch
         </a>

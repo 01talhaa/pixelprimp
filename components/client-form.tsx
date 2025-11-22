@@ -162,25 +162,25 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       {/* Basic Information */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 animate-fade-in-up">
         <CardHeader>
-          <CardTitle className="text-black">Basic Information</CardTitle>
+          <CardTitle className="text-[#F4F7F5]">Basic Information</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <Label htmlFor="name" className="text-black">Name *</Label>
+            <Label htmlFor="name" className="text-[#F4F7F5]">Name *</Label>
             <Input
               id="name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Client name"
               required
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50"
             />
           </div>
 
           <div>
-            <Label htmlFor="email" className="text-black">Email *</Label>
+            <Label htmlFor="email" className="text-[#F4F7F5]">Email *</Label>
             <Input
               id="email"
               type="email"
@@ -188,12 +188,12 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="client@example.com"
               required
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50"
             />
           </div>
 
           <div>
-            <Label htmlFor="password" className="text-black">
+            <Label htmlFor="password" className="text-[#F4F7F5]">
               Password {!clientId && "*"} {clientId && "(Leave empty to keep current)"}
             </Label>
             <Input
@@ -203,44 +203,44 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               placeholder="Enter password"
               required={!clientId}
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50"
             />
-            <p className="text-xs text-gray-600 mt-1">Minimum 6 characters</p>
+            <p className="text-xs text-[#F4F7F5]/70 mt-1">Minimum 6 characters</p>
           </div>
 
           <div>
-            <Label htmlFor="phone" className="text-black">Phone</Label>
+            <Label htmlFor="phone" className="text-[#F4F7F5]">Phone</Label>
             <Input
               id="phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               placeholder="+1 234 567 8900"
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50"
             />
           </div>
 
           <div>
-            <Label htmlFor="company" className="text-black">Company</Label>
+            <Label htmlFor="company" className="text-[#F4F7F5]">Company</Label>
             <Input
               id="company"
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
               placeholder="Company name"
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50"
             />
           </div>
         </CardContent>
       </Card>
 
       {/* Profile Image */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 animate-fade-in-up delay-100">
         <CardHeader>
-          <CardTitle className="text-black">Profile Image</CardTitle>
+          <CardTitle className="text-[#F4F7F5]">Profile Image</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {formData.avatar && (
-            <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-sky-200">
+            <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-[#008CE2]">
               <Image
                 src={formData.avatar}
                 alt="Profile"
@@ -250,7 +250,7 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
             </div>
           )}
           <div>
-            <Label htmlFor="avatar" className="text-black">Upload Image</Label>
+            <Label htmlFor="avatar" className="text-[#F4F7F5]">Upload Image</Label>
             <div className="flex gap-2 mt-2">
               <Input
                 id="avatar"
@@ -258,13 +258,13 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
                 accept="image/*"
                 onChange={handleImageUpload}
                 disabled={uploading}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Button
                 type="button"
                 variant="outline"
                 disabled={uploading}
-                className="bg-white border-sky-200 hover:bg-sky-50"
+                className="bg-[#1A1D21] border-[#1F2329] hover:bg-[#0F1113] hover:border-[#008CE2]"
               >
                 {uploading ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
@@ -273,7 +273,7 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
                 )}
               </Button>
             </div>
-            <p className="text-xs text-gray-600 mt-1">Max size: 5MB</p>
+            <p className="text-xs text-[#F4F7F5]/70 mt-1">Max size: 5MB</p>
           </div>
         </CardContent>
       </Card>
@@ -284,7 +284,7 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
           type="submit"
           disabled={loading}
           size="lg"
-          className="bg-sky-500 text-white hover:bg-sky-600"
+          className="bg-[#008CE2] text-[#F4F7F5] hover:bg-[#06B9D0] shadow-lg shadow-[#008CE2]/30 hover:scale-105 transition-all duration-300"
         >
           {loading ? (
             <>
@@ -301,7 +301,7 @@ export default function ClientForm({ clientId, initialData }: ClientFormProps) {
           type="button"
           variant="outline"
           onClick={() => router.back()}
-          className="border-sky-200 bg-white text-black hover:bg-sky-50"
+          className="border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2]"
         >
           Cancel
         </Button>

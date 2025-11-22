@@ -256,31 +256,31 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Basic Information */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
-          <CardTitle className="text-black">Basic Information</CardTitle>
+          <CardTitle className="text-[#F4F7F5]">Basic Information</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="title" className="text-black">Service Title</Label>
+              <Label htmlFor="title" className="text-[#F4F7F5]">Service Title</Label>
               <Input
                 id="title"
                 value={formData.title}
                 onChange={(e) => handleTitleChange(e.target.value)}
                 required
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="id" className="text-black">Service ID (URL)</Label>
+              <Label htmlFor="id" className="text-[#F4F7F5]">Service ID (URL)</Label>
               <Input
                 id="id"
                 value={formData.id}
                 onChange={(e) => setFormData({ ...formData, id: e.target.value })}
                 required
                 disabled={isEdit}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 placeholder="auto-generated-from-title"
               />
               <p className="text-xs text-gray-400">
@@ -290,94 +290,94 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="tagline" className="text-black">Tagline</Label>
+            <Label htmlFor="tagline" className="text-[#F4F7F5]">Tagline</Label>
             <Input
               id="tagline"
               value={formData.tagline}
               onChange={(e) => setFormData({ ...formData, tagline: e.target.value })}
               required
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               placeholder="Short catchy tagline"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description" className="text-black">Short Description</Label>
+            <Label htmlFor="description" className="text-[#F4F7F5]">Short Description</Label>
             <Textarea
               id="description"
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               required
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               rows={3}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="longDescription" className="text-black">Long Description</Label>
+            <Label htmlFor="longDescription" className="text-[#F4F7F5]">Long Description</Label>
             <Textarea
               id="longDescription"
               value={formData.longDescription}
               onChange={(e) => setFormData({ ...formData, longDescription: e.target.value })}
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               rows={4}
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="icon" className="text-black">Icon Name</Label>
+              <Label htmlFor="icon" className="text-[#F4F7F5]">Icon Name</Label>
               <Input
                 id="icon"
                 value={formData.icon || "Code"}
                 onChange={(e) => setFormData({ ...formData, icon: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 placeholder="Code"
               />
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-[#F4F7F5]/70">
                 Enter any Lucide icon name (e.g., Code, Zap, Globe, Smartphone, Database, Users, Award, Clock, Calendar, MapPin, ShoppingCart, Heart, Star, TrendingUp, CheckCircle, etc.)
               </p>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="pricing" className="text-black">Pricing Text</Label>
+              <Label htmlFor="pricing" className="text-[#F4F7F5]">Pricing Text</Label>
               <Input
                 id="pricing"
                 value={formData.pricing}
                 onChange={(e) => setFormData({ ...formData, pricing: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 placeholder="Starting ৳ 8,500"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="color" className="text-black">Color Gradient</Label>
+              <Label htmlFor="color" className="text-[#F4F7F5]">Color Gradient</Label>
               <Select
                 value={formData.color || "from-blue-500/20 to-cyan-500/20"}
                 onValueChange={(value) => setFormData({ ...formData, color: value })}
               >
-                <SelectTrigger className="bg-white border-sky-200 text-black">
+                <SelectTrigger className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]">
                   <SelectValue placeholder="Select gradient" />
                 </SelectTrigger>
                 <SelectContent className="bg-white border-sky-200">
-                  <SelectItem value="from-blue-500/20 to-cyan-500/20" className="text-black">Blue to Cyan</SelectItem>
-                  <SelectItem value="from-purple-500/20 to-violet-500/20" className="text-black">Purple to Violet</SelectItem>
-                  <SelectItem value="from-pink-500/20 to-rose-500/20" className="text-black">Pink to Rose</SelectItem>
-                  <SelectItem value="from-lime-500/20 to-green-500/20" className="text-black">Lime to Green</SelectItem>
-                  <SelectItem value="from-indigo-500/20 to-sky-500/20" className="text-black">Indigo to Sky</SelectItem>
-                  <SelectItem value="from-orange-500/20 to-amber-500/20" className="text-black">Orange to Amber</SelectItem>
+                  <SelectItem value="from-blue-500/20 to-cyan-500/20" className="text-[#F4F7F5]">Blue to Cyan</SelectItem>
+                  <SelectItem value="from-purple-500/20 to-violet-500/20" className="text-[#F4F7F5]">Purple to Violet</SelectItem>
+                  <SelectItem value="from-pink-500/20 to-rose-500/20" className="text-[#F4F7F5]">Pink to Rose</SelectItem>
+                  <SelectItem value="from-lime-500/20 to-green-500/20" className="text-[#F4F7F5]">Lime to Green</SelectItem>
+                  <SelectItem value="from-indigo-500/20 to-sky-500/20" className="text-[#F4F7F5]">Indigo to Sky</SelectItem>
+                  <SelectItem value="from-orange-500/20 to-amber-500/20" className="text-[#F4F7F5]">Orange to Amber</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="image" className="text-black">Service Image</Label>
+            <Label htmlFor="image" className="text-[#F4F7F5]">Service Image</Label>
             <div className="flex gap-4">
               <div className="flex-1">
                 <Input
                   id="image"
                   value={formData.image}
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                   placeholder="Image URL or upload below"
                 />
               </div>
@@ -395,7 +395,7 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                   variant="outline"
                   onClick={() => document.getElementById('image-upload')?.click()}
                   disabled={uploading}
-                  className="bg-white border-sky-200 hover:bg-sky-50"
+                  className="bg-sky-500 text-white hover:bg-sky-600"
                 >
                   {uploading ? (
                     <>
@@ -425,10 +425,10 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
       </Card>
 
       {/* Features */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Features</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Features</CardTitle>
             <Button type="button" size="sm" onClick={addFeature} className="bg-sky-500 hover:bg-sky-600 text-white">
               <Plus className="w-4 h-4 mr-2" />
               Add Feature
@@ -442,7 +442,7 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                 value={feature}
                 onChange={(e) => updateFeature(index, e.target.value)}
                 placeholder="Feature description"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Button 
                 type="button" 
@@ -458,10 +458,10 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
       </Card>
 
       {/* Process Steps */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Process Steps</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Process Steps</CardTitle>
             <Button type="button" size="sm" onClick={addProcessStep} className="bg-sky-500 hover:bg-sky-600 text-white">
               <Plus className="w-4 h-4 mr-2" />
               Add Step
@@ -470,9 +470,9 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
         </CardHeader>
         <CardContent className="space-y-4">
           {formData.process?.map((step, index) => (
-            <div key={index} className="p-4 border border-sky-200 rounded-lg space-y-3 bg-sky-50">
+            <div key={index} className="p-4 border border-[#1F2329] rounded-lg space-y-3 bg-[#0F1113]/80">
               <div className="flex items-center justify-between">
-                <span className="text-black font-medium">Step {index + 1}</span>
+                <span className="text-[#F4F7F5] font-medium">Step {index + 1}</span>
                 <Button 
                   type="button" 
                   size="sm" 
@@ -486,13 +486,13 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                 value={step.step}
                 onChange={(e) => updateProcessStep(index, 'step', e.target.value)}
                 placeholder="Step name"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Textarea
                 value={step.description}
                 onChange={(e) => updateProcessStep(index, 'description', e.target.value)}
                 placeholder="Step description"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
             </div>
           ))}
@@ -500,10 +500,10 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
       </Card>
 
       {/* Packages */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Pricing Packages</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Pricing Packages</CardTitle>
             <Button type="button" size="sm" onClick={addPackage} className="bg-sky-500 hover:bg-sky-600 text-white">
               <Plus className="w-4 h-4 mr-2" />
               Add Package
@@ -512,9 +512,9 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
         </CardHeader>
         <CardContent className="space-y-6">
           {formData.packages?.map((pkg, packageIndex) => (
-            <div key={packageIndex} className="p-4 border border-sky-200 rounded-lg space-y-4 bg-sky-50">
+            <div key={packageIndex} className="p-4 border border-[#1F2329] rounded-lg space-y-4 bg-[#0F1113]/80">
               <div className="flex items-center justify-between">
-                <span className="text-black font-medium">Package {packageIndex + 1}</span>
+                <span className="text-[#F4F7F5] font-medium">Package {packageIndex + 1}</span>
                 <Button 
                   type="button" 
                   size="sm" 
@@ -530,25 +530,25 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                   value={pkg.name}
                   onChange={(e) => updatePackage(packageIndex, 'name', e.target.value)}
                   placeholder="Package name"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
                 <Input
                   value={pkg.price}
                   onChange={(e) => updatePackage(packageIndex, 'price', e.target.value)}
                   placeholder="৳ 0"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
                 <Input
                   value={pkg.duration}
                   onChange={(e) => updatePackage(packageIndex, 'duration', e.target.value)}
                   placeholder="4 Weeks"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
                 <Input
                   value={pkg.revisions}
                   onChange={(e) => updatePackage(packageIndex, 'revisions', e.target.value)}
                   placeholder="2 revisions"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
               </div>
 
@@ -559,18 +559,18 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                   onChange={(e) => updatePackage(packageIndex, 'popular', e.target.checked)}
                   className="rounded"
                 />
-                <Label className="text-black">Mark as Popular</Label>
+                <Label className="text-[#F4F7F5]">Mark as Popular</Label>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label className="text-black">Package Features</Label>
+                  <Label className="text-[#F4F7F5]">Package Features</Label>
                   <Button 
                     type="button" 
                     size="sm" 
                     variant="outline"
                     onClick={() => addPackageFeature(packageIndex)}
-                    className="border-sky-200 hover:bg-white"
+                    className="border-[#1F2329] hover:bg-[#1A1D21]"
                   >
                     <Plus className="w-4 h-4 mr-2" />
                     Add Feature
@@ -582,7 +582,7 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                       value={feature}
                       onChange={(e) => updatePackageFeature(packageIndex, featureIndex, e.target.value)}
                       placeholder="Feature"
-                      className="bg-white border-sky-200 text-black"
+                      className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                     />
                     <Button 
                       type="button" 
@@ -601,10 +601,10 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
       </Card>
 
       {/* Stats */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Stats</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Stats</CardTitle>
             <Button type="button" size="sm" onClick={addStat} className="bg-sky-500 hover:bg-sky-600 text-white">
               <Plus className="w-4 h-4 mr-2" />
               Add Stat
@@ -618,19 +618,19 @@ export function ServiceForm({ initialData, isEdit = false }: ServiceFormProps) {
                 value={stat.icon || "Award"}
                 onChange={(e) => updateStat(index, 'icon', e.target.value)}
                 placeholder="Icon name"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Input
                 value={stat.label || ""}
                 onChange={(e) => updateStat(index, 'label', e.target.value)}
                 placeholder="Label"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Input
                 value={stat.value || ""}
                 onChange={(e) => updateStat(index, 'value', e.target.value)}
                 placeholder="Value"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Button 
                 type="button" 

@@ -21,9 +21,9 @@ export default function NewProjectPage() {
 
   return (
     <div className="container mx-auto py-10">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-black">Create New Project</h1>
-        <p className="text-gray-600 mt-2">
+      <div className="mb-8 animate-fade-in-up">
+        <h1 className="text-3xl font-bold text-[#F4F7F5]">Create New Project</h1>
+        <p className="text-[#F4F7F5]/80 mt-2">
           Fill in all the details to create a new project
         </p>
       </div>

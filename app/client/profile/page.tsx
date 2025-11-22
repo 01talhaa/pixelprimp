@@ -219,27 +219,36 @@ export default function ClientProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
+      <div className="min-h-screen flex items-center justify-center bg-[#08090A]">
+        <Loader2 className="w-8 h-8 animate-spin text-[#008CE2]" />
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#08090A] via-[#0F1113] to-[#08090A] animate-fade-in-up">
       {/* Header */}
-      <header className="border-b border-sky-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
+      <header className="border-b border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm shadow-[#008CE2]/10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/client/dashboard"
-            className="text-2xl font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent"
-          >
-            My Profile
+          <div className="flex items-center gap-6">
+                      <Link href="/" className="flex items-center gap-1.5 hover:scale-105 transition-transform duration-300">
+            <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={20} height={20} className="h-5 w-5" />
+            <span className="font-semibold tracking-wide">
+              <span className="text-[#008CE2]">Pixel</span>
+              <span className="text-[#F4F7F5]">Primp</span>
+            </span>
           </Link>
+            <Link
+              href="/client/dashboard"
+              className="text-2xl font-bold bg-gradient-to-r from-[#008CE2] to-[#06B9D0] bg-clip-text text-transparent"
+            >
+              Profile
+            </Link>
+          </div>
           <Button
             onClick={() => router.back()}
             variant="outline"
-            className="border-sky-200 bg-white text-black hover:bg-sky-50"
+            className="border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2] hover:scale-105 transition-all duration-300"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
@@ -250,15 +259,15 @@ export default function ClientProfilePage() {
       <div className="container mx-auto px-4 py-8 max-w-2xl space-y-6">
         {/* Profile Information */}
         <form onSubmit={handleProfileUpdate}>
-          <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+          <Card className="border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl shadow-lg shadow-[#008CE2]/20">
             <CardHeader>
-              <CardTitle className="text-black text-xl">Profile Information</CardTitle>
+              <CardTitle className="text-[#F4F7F5] text-xl">Profile Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {/* Profile Image */}
               <div className="flex flex-col items-center gap-4">
                 {formData.avatar ? (
-                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-sky-200">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-[#008CE2]">
                     <Image
                       src={formData.avatar}
                       alt="Profile"
@@ -267,12 +276,12 @@ export default function ClientProfilePage() {
                     />
                   </div>
                 ) : (
-                  <div className="w-32 h-32 rounded-full bg-sky-100 flex items-center justify-center border-4 border-sky-200">
-                    <User className="w-16 h-16 text-sky-600" />
+                  <div className="w-32 h-32 rounded-full bg-[#1A1D21] flex items-center justify-center border-4 border-[#008CE2]">
+                    <User className="w-16 h-16 text-[#008CE2]" />
                   </div>
                 )}
                 <div className="w-full">
-                  <Label htmlFor="avatar" className="text-black">Profile Picture</Label>
+                  <Label htmlFor="avatar" className="text-[#F4F7F5]">Profile Picture</Label>
                   <div className="flex gap-2 mt-2">
                     <Input
                       id="avatar"
@@ -280,13 +289,13 @@ export default function ClientProfilePage() {
                       accept="image/*"
                       onChange={handleImageUpload}
                       disabled={uploading}
-                      className="bg-white border-sky-200 text-black"
+                      className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] transition-all duration-300"
                     />
                     <Button
                       type="button"
                       variant="outline"
                       disabled={uploading}
-                      className="bg-white border-sky-200 hover:bg-sky-50 shrink-0"
+                      className="bg-[#0F1113] border-[#1F2329] hover:bg-[#1A1D21] hover:border-[#008CE2] hover:scale-105 transition-all duration-300 shrink-0"
                     >
                       {uploading ? (
                         <Loader2 className="w-4 h-4 animate-spin" />
@@ -295,26 +304,26 @@ export default function ClientProfilePage() {
                       )}
                     </Button>
                   </div>
-                  <p className="text-xs text-gray-600 mt-1">Max size: 5MB</p>
+                  <p className="text-xs text-[#F4F7F5]/70 mt-1">Max size: 5MB</p>
                 </div>
               </div>
 
               {/* Name */}
               <div>
-                <Label htmlFor="name" className="text-black">Full Name *</Label>
+                <Label htmlFor="name" className="text-[#F4F7F5]">Full Name *</Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your name"
                   required
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <Label htmlFor="email" className="text-black">Email *</Label>
+                <Label htmlFor="email" className="text-[#F4F7F5]">Email *</Label>
                 <Input
                   id="email"
                   type="email"
@@ -322,39 +331,39 @@ export default function ClientProfilePage() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="your@email.com"
                   required
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <Label htmlFor="phone" className="text-black">Phone</Label>
+                <Label htmlFor="phone" className="text-[#F4F7F5]">Phone</Label>
                 <Input
                   id="phone"
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+1 234 567 8900"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
               </div>
 
               {/* Company */}
               <div>
-                <Label htmlFor="company" className="text-black">Company</Label>
+                <Label htmlFor="company" className="text-[#F4F7F5]">Company</Label>
                 <Input
                   id="company"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="Your company name"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
               </div>
 
               <Button
                 type="submit"
                 disabled={saving || uploading}
-                className="w-full bg-sky-500 text-white hover:bg-sky-600"
+                className="w-full bg-[#008CE2] text-white hover:bg-[#06B9D0] hover:scale-105 transition-all duration-300"
               >
                 {saving ? (
                   <>
@@ -371,45 +380,45 @@ export default function ClientProfilePage() {
 
         {/* Change Password */}
         <form onSubmit={handlePasswordChange}>
-          <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+          <Card className="border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl shadow-lg shadow-[#008CE2]/20">
             <CardHeader>
-              <CardTitle className="text-black text-xl">Change Password</CardTitle>
+              <CardTitle className="text-[#F4F7F5] text-xl">Change Password</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <Label htmlFor="currentPassword" className="text-black">Current Password</Label>
+                <Label htmlFor="currentPassword" className="text-[#F4F7F5]">Current Password</Label>
                 <Input
                   id="currentPassword"
                   type="password"
                   value={passwordData.currentPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
                   placeholder="Enter current password"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
               </div>
 
               <div>
-                <Label htmlFor="newPassword" className="text-black">New Password</Label>
+                <Label htmlFor="newPassword" className="text-[#F4F7F5]">New Password</Label>
                 <Input
                   id="newPassword"
                   type="password"
                   value={passwordData.newPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
                   placeholder="Enter new password"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
-                <p className="text-xs text-gray-600 mt-1">Minimum 6 characters</p>
+                <p className="text-xs text-[#F4F7F5]/70 mt-1">Minimum 6 characters</p>
               </div>
 
               <div>
-                <Label htmlFor="confirmPassword" className="text-black">Confirm New Password</Label>
+                <Label htmlFor="confirmPassword" className="text-[#F4F7F5]">Confirm New Password</Label>
                 <Input
                   id="confirmPassword"
                   type="password"
                   value={passwordData.confirmPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })}
                   placeholder="Confirm new password"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
                 />
               </div>
 
@@ -417,7 +426,7 @@ export default function ClientProfilePage() {
                 type="submit"
                 disabled={saving || !passwordData.currentPassword || !passwordData.newPassword}
                 variant="outline"
-                className="w-full border-sky-200 bg-white text-black hover:bg-sky-50"
+                className="w-full border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2] hover:scale-105 transition-all duration-300"
               >
                 {saving ? (
                   <>

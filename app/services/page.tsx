@@ -407,17 +407,17 @@ export default async function ServicesPage() {
   
   return (
     <>
-      <main className="min-h-[100dvh] bg-white text-black">
+      <main className="min-h-[100dvh] bg-[#08090A] text-[#F4F7F5]">
         <SiteHeader />
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16 sm:py-24 bg-gradient-to-b from-white via-sky-50 to-white">
+        <section className="container mx-auto px-4 py-16 sm:py-24 bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A]">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-black">
+            <h1 className="mb-6 text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl text-[#F4F7F5] animate-fade-in-up">
               <span className="block">Premium Creative</span>
-              <span className="block text-sky-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">Services</span>
+              <span className="block text-[#008CE2] drop-shadow-[0_0_20px_rgba(0,140,226,0.5)]">Services</span>
             </h1>
-            <p className="text-lg text-gray-700 sm:text-xl">
+            <p className="text-lg text-[#F4F7F5]/80 sm:text-xl animate-fade-in-up delay-100">
               From concept to completion, we deliver world-class creative solutions that drive real results for your
               business
             </p>
@@ -432,7 +432,7 @@ export default async function ServicesPage() {
               return (
               <Card
                 key={service.id}
-                className="liquid-glass border border-sky-200 bg-white/80 backdrop-blur-xl overflow-hidden shadow-lg shadow-sky-200/30"
+                className="liquid-glass border border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl overflow-hidden shadow-lg shadow-[#008CE2]/20 hover:shadow-xl hover:shadow-[#06B9D0]/30 transition-all duration-300 hover:scale-[1.02] animate-fade-in-up"
               >
                 <div className={`grid gap-8 lg:grid-cols-2 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
                   {/* Image */}
@@ -454,18 +454,18 @@ export default async function ServicesPage() {
                     </div>
 
                     <CardHeader className="p-0 mb-4">
-                      <p className="text-sm font-medium text-sky-600 mb-2">{service.tagline}</p>
-                      <CardTitle className="text-3xl text-black mb-3">{service.title}</CardTitle>
-                      <p className="text-gray-700">{service.description}</p>
+                      <p className="text-sm font-medium text-[#008CE2] mb-2">{service.tagline}</p>
+                      <CardTitle className="text-3xl text-[#F4F7F5] mb-3">{service.title}</CardTitle>
+                      <p className="text-[#F4F7F5]/80">{service.description}</p>
                     </CardHeader>
 
                     <CardContent className="p-0 space-y-6">
                       <div>
-                        <h4 className="text-sm font-semibold text-black mb-3">What's Included:</h4>
+                        <h4 className="text-sm font-semibold text-[#F4F7F5] mb-3">What's Included:</h4>
                         <ul className="grid gap-2 sm:grid-cols-2">
                           {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                              <Check className="h-4 w-4 text-sky-500 mt-0.5 flex-shrink-0" />
+                            <li key={idx} className="flex items-start gap-2 text-sm text-[#F4F7F5]/80">
+                              <Check className="h-4 w-4 text-[#008CE2] mt-0.5 flex-shrink-0" />
                               <span>{feature}</span>
                             </li>
                           ))}
@@ -473,8 +473,8 @@ export default async function ServicesPage() {
                       </div>
 
                       <div className="flex flex-wrap items-center gap-4">
-                        <div className="text-2xl font-bold text-black">{service.pricing}</div>
-                        <Button asChild className="rounded-full bg-sky-500 px-6 text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30">
+                        <div className="text-2xl font-bold text-[#008CE2]">{service.pricing}</div>
+                        <Button asChild className="rounded-full bg-[#008CE2] px-6 text-[#F4F7F5] hover:bg-[#06B9D0] shadow-lg shadow-[#008CE2]/30 hover:shadow-xl hover:shadow-[#06B9D0]/40 hover:scale-105 transition-all duration-300">
                           <Link href={`/services/${service.id}`}>
                             View Details
                             <ArrowRight className="ml-2 h-4 w-4" />
@@ -491,14 +491,14 @@ export default async function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="container mx-auto px-4 pb-16 sm:pb-24 bg-gradient-to-b from-white via-sky-50 to-white">
-          <Card className="liquid-glass-enhanced border border-sky-200 bg-white/90 backdrop-blur-xl text-center p-8 sm:p-12 shadow-lg shadow-sky-200/40">
-            <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl">Ready to Start Your Project?</h2>
-            <p className="mb-8 text-lg text-gray-700">Let's discuss how we can bring your vision to life</p>
+        <section className="container mx-auto px-4 pb-16 sm:pb-24 bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A]">
+          <Card className="liquid-glass-enhanced border border-[#1F2329] bg-[#0F1113]/90 backdrop-blur-xl text-center p-8 sm:p-12 shadow-lg shadow-[#008CE2]/40 animate-fade-in-up">
+            <h2 className="mb-4 text-3xl font-bold text-[#F4F7F5] sm:text-4xl">Ready to Start Your Project?</h2>
+            <p className="mb-8 text-lg text-[#F4F7F5]/80">Let's discuss how we can bring your vision to life</p>
             <Button
               asChild
               size="lg"
-              className="rounded-full bg-sky-500 px-8 text-base font-semibold text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
+              className="rounded-full bg-[#008CE2] px-8 text-base font-semibold text-[#F4F7F5] hover:bg-[#06B9D0] shadow-lg shadow-[#008CE2]/30 hover:shadow-xl hover:shadow-[#06B9D0]/40 hover:scale-105 transition-all duration-300"
             >
               <Link href="https://wa.me/8801401658685?text=Hi!%20I'm%20interested%20in%20your%20services">Get in Touch</Link>
             </Button>

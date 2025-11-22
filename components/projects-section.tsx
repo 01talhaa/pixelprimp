@@ -53,10 +53,10 @@ export function ProjectsSection() {
     )
   }
   return (
-    <section id="projects" className="container mx-auto px-4 py-12 sm:py-16 bg-gradient-to-b from-white via-sky-50 to-white">
-      <div className="mb-10 text-center">
-        <h2 className="mb-2 text-4xl font-extrabold tracking-tight text-black sm:text-5xl">Featured <span className="text-sky-500">Projects</span></h2>
-        <p className="mx-auto max-w-2xl text-lg text-gray-700">See how we've helped brands stand out with innovative design and creative solutions.</p>
+    <section id="projects" className="container mx-auto px-4 py-12 sm:py-16 bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A]">
+      <div className="mb-10 text-center animate-fade-in-up">
+        <h2 className="mb-2 text-4xl font-extrabold tracking-tight text-[#F4F7F5] sm:text-5xl">Featured <span className="text-[#008CE2]">Projects</span></h2>
+        <p className="mx-auto max-w-2xl text-lg text-[#F4F7F5]/80">See how we've helped brands stand out with innovative design and creative solutions.</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -65,11 +65,11 @@ export function ProjectsSection() {
         ))}
       </div>
 
-      <div className="mt-10 text-center">
+      <div className="mt-10 text-center animate-scale-in delay-400">
         <Button 
           asChild 
           size="lg"
-          className="rounded-full bg-sky-500 px-8 text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
+          className="rounded-full bg-[#008CE2] px-8 text-[#F4F7F5] hover:bg-[#06B9D0] shadow-lg shadow-[#008CE2]/30 hover:shadow-xl hover:shadow-[#06B9D0]/40 animate-pulse-glow"
         >
           <Link href="/projects">
             View All Projects
@@ -87,11 +87,11 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.id}`}>
       <Card
-        className="group liquid-glass border border-sky-200 bg-white/80 backdrop-blur-xl overflow-hidden transition-all hover:border-sky-300 hover:bg-white/90 h-full flex flex-col shadow-lg shadow-sky-200/30"
+        className="group liquid-glass border border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl overflow-hidden transition-all hover:border-[#008CE2] hover:bg-[#1A1D21]/90 h-full flex flex-col shadow-lg shadow-[#008CE2]/10 hover:shadow-xl hover:shadow-[#06B9D0]/20 hover:scale-[1.02] animate-fade-in-up"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative aspect-video overflow-hidden bg-sky-100">
+        <div className="relative aspect-video overflow-hidden bg-[#1A1D21]">
           {project.video ? (
             <>
               <video
@@ -102,7 +102,7 @@ function ProjectCard({ project }: { project: Project }) {
                 muted
                 playsInline
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08090A]/60 to-transparent" />
             </>
           ) : (
             <>
@@ -111,14 +111,14 @@ function ProjectCard({ project }: { project: Project }) {
                 alt={project.title}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08090A]/60 to-transparent" />
             </>
           )}
 
           {/* Play button overlay for video projects */}
           {project.video && (
             <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500/90 backdrop-blur-sm shadow-lg">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#008CE2]/90 backdrop-blur-sm shadow-lg shadow-[#008CE2]/40">
                 <Play className="h-7 w-7 text-white fill-white ml-1" />
               </div>
             </div>
@@ -126,23 +126,23 @@ function ProjectCard({ project }: { project: Project }) {
 
           {/* Category badge */}
           <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center rounded-full bg-white/90 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-sky-600 border border-sky-300">
+            <span className="inline-flex items-center rounded-full bg-[#0F1113]/90 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium text-[#008CE2] border border-[#008CE2]">
               {project.category}
             </span>
           </div>
         </div>
 
         <div className="p-4 flex-grow flex flex-col">
-          <div className="mb-1 text-sm text-gray-600">
+          <div className="mb-1 text-sm text-[#F4F7F5]/70">
             <span>{project.client}</span>
           </div>
-          <h3 className="mb-2 text-xl font-bold text-black group-hover:text-sky-500 transition-colors">
+          <h3 className="mb-2 text-xl font-bold text-[#F4F7F5] group-hover:text-[#06B9D0] transition-colors">
             {project.title}
           </h3>
-          <p className="mb-3 text-gray-700 text-sm flex-grow line-clamp-2">{project.description}</p>
+          <p className="mb-3 text-[#F4F7F5]/80 text-sm flex-grow line-clamp-2">{project.description}</p>
           <div className="flex flex-wrap gap-2 mt-auto">
             {project.tags.slice(0, 2).map((tag: string) => (
-              <span key={tag} className="rounded-full bg-sky-50 px-2.5 py-0.5 text-xs text-gray-700 border border-sky-200">
+              <span key={tag} className="rounded-full bg-[#1A1D21] px-2.5 py-0.5 text-xs text-[#F4F7F5]/80 border border-[#1F2329]">
                 {tag}
               </span>
             ))}

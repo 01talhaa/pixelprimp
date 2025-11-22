@@ -222,28 +222,28 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Basic Info */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
-          <CardTitle className="text-black">Basic Information</CardTitle>
+          <CardTitle className="text-[#F4F7F5]">Basic Information</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-black">Full Name</Label>
+              <Label htmlFor="name" className="text-white">Full Name</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleNameChange(e.target.value)}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="id" className="text-black">ID (auto-generated)</Label>
+              <Label htmlFor="id" className="text-[#F4F7F5]">ID (auto-generated)</Label>
               <Input
                 id="id"
                 value={formData.id}
-                className="bg-white border-sky-200 text-gray-500"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]/70"
                 disabled
               />
             </div>
@@ -251,23 +251,23 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="role" className="text-black">Role</Label>
+              <Label htmlFor="role" className="text-white">Role</Label>
               <Input
                 id="role"
                 value={formData.role}
                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 placeholder="e.g., Creative Director"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="department" className="text-black">Department</Label>
+              <Label htmlFor="department" className="text-white">Department</Label>
               <Input
                 id="department"
                 value={formData.department}
                 onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 placeholder="e.g., Leadership"
                 required
               />
@@ -275,37 +275,37 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="bio" className="text-black">Short Bio</Label>
+            <Label htmlFor="bio" className="text-white">Short Bio</Label>
             <Textarea
               id="bio"
               value={formData.bio}
               onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               rows={2}
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="fullBio" className="text-black">Full Bio (Optional)</Label>
+            <Label htmlFor="fullBio" className="text-white">Full Bio (Optional)</Label>
             <Textarea
               id="fullBio"
               value={formData.fullBio}
               onChange={(e) => setFormData({ ...formData, fullBio: e.target.value })}
-              className="bg-white border-sky-200 text-black"
+              className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               rows={4}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="image" className="text-black">Profile Image</Label>
+            <Label htmlFor="image" className="text-white">Profile Image</Label>
             <div className="flex gap-4">
               <div className="flex-1">
                 <Input
                   id="image"
                   value={formData.image}
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                   placeholder="Image URL"
                 />
               </div>
@@ -321,7 +321,7 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
                   type="button"
                   onClick={() => document.getElementById('image-upload')?.click()}
                   disabled={uploading}
-                  className="bg-white border-sky-200 hover:bg-sky-50"
+                  className="bg-sky-500 text-white hover:bg-sky-600"
                 >
                   {uploading ? (
                     <>
@@ -346,32 +346,32 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-black">Email</Label>
+              <Label htmlFor="email" className="text-white">Email</Label>
               <Input
                 id="email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="linkedin" className="text-black">LinkedIn URL</Label>
+              <Label htmlFor="linkedin" className="text-white">LinkedIn URL</Label>
               <Input
                 id="linkedin"
                 value={formData.linkedin}
                 onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="twitter" className="text-black">Twitter URL</Label>
+              <Label htmlFor="twitter" className="text-white">Twitter URL</Label>
               <Input
                 id="twitter"
                 value={formData.twitter}
                 onChange={(e) => setFormData({ ...formData, twitter: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
             </div>
           </div>
@@ -379,10 +379,10 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
       </Card>
 
       {/* Expertise */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Expertise</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Expertise</CardTitle>
             <Button type="button" onClick={addExpertise} size="sm" className="bg-sky-500 text-white hover:bg-sky-600">
               <Plus className="w-4 h-4 mr-2" />
               Add Skill
@@ -396,7 +396,7 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
                 value={skill}
                 onChange={(e) => updateExpertise(index, e.target.value)}
                 placeholder="e.g., Creative Strategy & Direction"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Button
                 type="button"
@@ -412,10 +412,10 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
       </Card>
 
       {/* Experience */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Experience</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Experience</CardTitle>
             <Button type="button" onClick={addExperience} size="sm" className="bg-sky-500 text-white hover:bg-sky-600">
               <Plus className="w-4 h-4 mr-2" />
               Add Experience
@@ -442,26 +442,26 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
                     value={exp.title}
                     onChange={(e) => updateExperience(index, 'title', e.target.value)}
                     placeholder="Job Title"
-                    className="bg-white border-sky-200 text-black"
+                    className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                   />
                   <Input
                     value={exp.company}
                     onChange={(e) => updateExperience(index, 'company', e.target.value)}
                     placeholder="Company"
-                    className="bg-white border-sky-200 text-black"
+                    className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                   />
                 </div>
                 <Input
                   value={exp.period}
                   onChange={(e) => updateExperience(index, 'period', e.target.value)}
                   placeholder="Period (e.g., 2020 - Present)"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
                 <Textarea
                   value={exp.description}
                   onChange={(e) => updateExperience(index, 'description', e.target.value)}
                   placeholder="Description"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                   rows={2}
                 />
               </div>
@@ -471,10 +471,10 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
       </Card>
 
       {/* Education */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Education</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Education</CardTitle>
             <Button type="button" onClick={addEducation} size="sm" className="bg-sky-500 text-white hover:bg-sky-600">
               <Plus className="w-4 h-4 mr-2" />
               Add Education
@@ -500,19 +500,19 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
                   value={edu.degree}
                   onChange={(e) => updateEducation(index, 'degree', e.target.value)}
                   placeholder="Degree (e.g., MFA in Digital Media)"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
                 <Input
                   value={edu.school}
                   onChange={(e) => updateEducation(index, 'school', e.target.value)}
                   placeholder="School"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
                 <Input
                   value={edu.year}
                   onChange={(e) => updateEducation(index, 'year', e.target.value)}
                   placeholder="Year"
-                  className="bg-white border-sky-200 text-black"
+                  className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
                 />
               </div>
             </Card>
@@ -521,10 +521,10 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
       </Card>
 
       {/* Awards */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Awards & Recognition</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Awards & Recognition</CardTitle>
             <Button type="button" onClick={addAward} size="sm" className="bg-sky-500 text-white hover:bg-sky-600">
               <Plus className="w-4 h-4 mr-2" />
               Add Award
@@ -538,7 +538,7 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
                 value={award}
                 onChange={(e) => updateAward(index, e.target.value)}
                 placeholder="Award title"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Button
                 type="button"
@@ -554,10 +554,10 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
       </Card>
 
       {/* Projects */}
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-black">Project IDs</CardTitle>
+            <CardTitle className="text-[#F4F7F5]">Project IDs</CardTitle>
             <Button type="button" onClick={addProject} size="sm" className="bg-sky-500 text-white hover:bg-sky-600">
               <Plus className="w-4 h-4 mr-2" />
               Add Project
@@ -571,7 +571,7 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
                 value={project}
                 onChange={(e) => updateProject(index, e.target.value)}
                 placeholder="Project ID (e.g., luxury-watch-campaign)"
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5]"
               />
               <Button
                 type="button"
@@ -606,7 +606,7 @@ export function TeamMemberForm({ initialData, isEdit = false }: TeamMemberFormPr
           type="button"
           variant="outline"
           onClick={() => router.back()}
-          className="border-sky-200 bg-white text-black hover:bg-sky-50"
+          className="bg-sky-500 text-white hover:bg-sky-600"
         >
           Cancel
         </Button>

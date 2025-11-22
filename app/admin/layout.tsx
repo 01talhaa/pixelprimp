@@ -28,63 +28,63 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   return (
     <ProtectedRoute requiredRole="admin">
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#08090A]">
         {/* Admin Header */}
-        <header className="border-b border-sky-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
+        <header className="border-b border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm shadow-[#008CE2]/10">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <div className="flex items-center gap-8">
               <Link
                 href="/admin"
-                className="text-2xl font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent"
+                className="text-2xl font-bold bg-gradient-to-r from-[#008CE2] to-[#06B9D0] bg-clip-text text-transparent"
               >
                 Admin Panel
               </Link>
               <nav className="hidden md:flex items-center gap-6">
                 <Link
                   href="/admin"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <LayoutDashboard className="w-4 h-4" />
                   Dashboard
                 </Link>
                 <Link
                   href="/admin/services"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <Briefcase className="w-4 h-4" />
                   Services
                 </Link>
                 <Link
                   href="/admin/projects"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <FolderKanban className="w-4 h-4" />
                   Projects
                 </Link>
                 <Link
                   href="/admin/team"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <Users className="w-4 h-4" />
                   Team
                 </Link>
                 <Link
                   href="/admin/clients"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <UserCircle className="w-4 h-4" />
                   Clients
                 </Link>
                 <Link
                   href="/admin/inquiries"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <FileText className="w-4 h-4" />
                   Inquiries
                 </Link>
                 <Link
                   href="/admin/test"
-                  className="text-sm text-gray-600 hover:text-sky-600 transition-colors flex items-center gap-2"
+                  className="text-sm text-[#F4F7F5] hover:text-[#06B9D0] transition-all duration-300 flex items-center gap-2 hover:scale-105"
                 >
                   <FlaskConical className="w-4 h-4" />
                   Test
@@ -92,8 +92,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               </nav>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-600">Welcome, {user?.name}</span>
-              <Button variant="outline" size="sm" onClick={handleLogout} className="border-sky-300 text-sky-600 hover:bg-sky-50">
+              <span className="text-sm text-[#F4F7F5]">Welcome, {user?.name}</span>
+              <Button variant="outline" size="sm" onClick={handleLogout} className="border-[#1F2329] text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2]">
                 <LogOut className="w-4 h-4 mr-2" />
                 Logout
               </Button>
@@ -102,7 +102,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </header>
 
         {/* Main Content */}
-        <main className="container mx-auto px-4 py-8 bg-gradient-to-b from-sky-50 to-white min-h-[calc(100vh-73px)]">{children}</main>
+        <main className="container mx-auto px-4 py-8 bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A] min-h-[calc(100vh-73px)]">{children}</main>
       </div>
     </ProtectedRoute>
   )

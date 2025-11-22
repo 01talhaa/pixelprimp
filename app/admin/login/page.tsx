@@ -40,23 +40,23 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-50 via-white to-sky-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F1113] via-[#08090A] to-[#1A1D21] p-4">
       <div className="w-full max-w-md">
-        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-sky-200">
+        <div className="bg-[#0F1113]/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-[#1F2329] animate-fade-in-up">
           <div className="mb-8 text-center">
-            <h1 className="text-4xl font-bold text-sky-600 mb-2">Pqrix Admin</h1>
-            <p className="text-gray-600">Sign in to your account</p>
+            <h1 className="text-4xl font-bold text-[#008CE2] mb-2">Pqrix Admin</h1>
+            <p className="text-[#F4F7F5]/70">Sign in to your account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="p-4 text-sm text-red-700 bg-red-50 border border-red-300 rounded-lg">
+              <div className="p-4 text-sm text-red-400 bg-red-950/50 border border-red-900/50 rounded-lg">
                 {error}
               </div>
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-[#F4F7F5] mb-2">
                 Email Address
               </label>
               <input
@@ -67,12 +67,12 @@ export default function AdminLoginPage() {
                 placeholder="abstalha@gmail.com"
                 required
                 autoComplete="email"
-                className="w-full px-4 py-3 bg-white border border-sky-200 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                className="w-full px-4 py-3 bg-[#1A1D21] border border-[#1F2329] rounded-lg text-[#F4F7F5] placeholder-[#F4F7F5]/50 focus:outline-none focus:ring-2 focus:ring-[#008CE2] focus:border-transparent transition-all duration-300"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-[#F4F7F5] mb-2">
                 Password
               </label>
               <input
@@ -83,14 +83,14 @@ export default function AdminLoginPage() {
                 placeholder="Enter your password"
                 required
                 autoComplete="current-password"
-                className="w-full px-4 py-3 bg-white border border-sky-200 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+                className="w-full px-4 py-3 bg-[#1A1D21] border border-[#1F2329] rounded-lg text-[#F4F7F5] placeholder-[#F4F7F5]/50 focus:outline-none focus:ring-2 focus:ring-[#008CE2] focus:border-transparent transition-all duration-300"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-sky-300/40"
+              className="w-full py-3 px-4 bg-[#008CE2] hover:bg-[#06B9D0] hover:scale-105 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               {loading ? (
                 <span className="flex items-center justify-center">
@@ -106,10 +106,10 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-gray-700 text-center">
-            <p className="text-xs text-gray-500">
+          <div className="mt-6 pt-6 border-t border-[#1F2329] text-center">
+            <p className="text-xs text-[#F4F7F5]/50">
               Test Credentials:<br />
-              <span className="text-gray-400">abstalha@gmail.com / 123456</span>
+              <span className="text-[#F4F7F5]/40">abstalha@gmail.com / 123456</span>
             </p>
           </div>
         </div>

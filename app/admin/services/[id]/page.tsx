@@ -40,24 +40,24 @@ export default function EditServicePage({ params }: { params: Promise<{ id: stri
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between animate-fade-in-up">
         <div className="flex items-center gap-4">
-          <Button asChild variant="outline" size="icon" className="border-sky-200 hover:bg-sky-50">
+          <Button asChild variant="outline" size="icon" className="border-[#1F2329] hover:bg-[#1A1D21] text-[#008CE2]">
             <Link href="/admin/services">
               <ArrowLeft className="w-4 h-4" />
             </Link>
           </Button>
           <div>
-            <h1 className="text-3xl font-bold text-black">
+            <h1 className="text-3xl font-bold text-[#F4F7F5]">
               {isNew ? "Add New Service" : "Edit Service"}
             </h1>
-            <p className="text-gray-600 mt-2">Fill in the service details</p>
+            <p className="text-[#F4F7F5]/80 mt-2">Fill in the service details</p>
           </div>
         </div>
       </div>
 
       {loading ? (
-        <div className="text-black text-center py-12">Loading...</div>
+        <div className="text-[#F4F7F5] text-center py-12">Loading...</div>
       ) : (
         <ServiceForm 
           initialData={service || undefined} 

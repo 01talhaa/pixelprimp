@@ -219,11 +219,11 @@ export default function AdminInquiriesPage() {
     const client = inquiry.clientId
 
     return (
-      <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+      <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 hover:shadow-xl hover:shadow-[#06B9D0]/30 hover:scale-[1.02] transition-all duration-300 animate-fade-in-up">
         <CardHeader>
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <CardTitle className="text-lg text-black mb-2">{inquiry.serviceName}</CardTitle>
+              <CardTitle className="text-lg text-[#F4F7F5] mb-2">{inquiry.serviceName}</CardTitle>
               <div className="flex items-center gap-2 mb-2">
                 <Badge className={statusColors[inquiry.status]}>
                   <StatusIcon className={`h-3 w-3 mr-1 ${inquiry.status === 'in-progress' ? 'animate-spin' : ''}`} />
@@ -233,19 +233,19 @@ export default function AdminInquiriesPage() {
                   {inquiry.paymentStatus.toUpperCase()}
                 </Badge>
               </div>
-              <p className="text-sm font-mono text-gray-600">Invoice: {inquiry.invoiceNumber}</p>
+              <p className="text-sm font-mono text-[#F4F7F5]/70">Invoice: {inquiry.invoiceNumber}</p>
             </div>
             <div className="text-right">
-              <p className="text-2xl font-bold text-sky-600">{inquiry.totalAmount}</p>
+              <p className="text-2xl font-bold text-[#008CE2]">{inquiry.totalAmount}</p>
               {inquiry.packageName && (
-                <p className="text-xs text-gray-600">{inquiry.packageName}</p>
+                <p className="text-xs text-[#F4F7F5]/70">{inquiry.packageName}</p>
               )}
             </div>
           </div>
         </CardHeader>
         <CardContent>
           {/* Client Info */}
-          <div className="mb-4 p-3 rounded-lg bg-gray-50 border border-gray-200">
+          <div className="mb-4 p-3 rounded-lg bg-[#1A1D21] border border-[#1F2329]">
             <div className="flex items-center gap-3 mb-2">
               {client?.avatar && (
                 <Image
@@ -257,29 +257,29 @@ export default function AdminInquiriesPage() {
                 />
               )}
               <div>
-                <p className="font-semibold text-black">{client?.name || 'Unknown Client'}</p>
-                <p className="text-xs text-gray-600">{client?.email}</p>
+                <p className="font-semibold text-[#F4F7F5]">{client?.name || 'Unknown Client'}</p>
+                <p className="text-xs text-[#F4F7F5]/70">{client?.email}</p>
               </div>
             </div>
-            {client?.phone && <p className="text-xs text-gray-600">📱 {client.phone}</p>}
-            {client?.company && <p className="text-xs text-gray-600">🏢 {client.company}</p>}
+            {client?.phone && <p className="text-xs text-[#F4F7F5]/70">📱 {client.phone}</p>}
+            {client?.company && <p className="text-xs text-[#F4F7F5]/70">🏢 {client.company}</p>}
           </div>
 
           {/* Message */}
           <div className="mb-4">
-            <p className="text-sm text-gray-700 line-clamp-2">{inquiry.message}</p>
+            <p className="text-sm text-[#F4F7F5]/80 line-clamp-2">{inquiry.message}</p>
           </div>
 
           {/* Admin Notes */}
           {inquiry.adminNotes && (
-            <div className="mb-4 p-3 rounded-lg bg-blue-50 border border-blue-200">
-              <p className="text-xs font-semibold text-blue-800 mb-1">Admin Notes:</p>
-              <p className="text-xs text-blue-700">{inquiry.adminNotes}</p>
+            <div className="mb-4 p-3 rounded-lg bg-[#1A1D21] border border-[#008CE2]/30">
+              <p className="text-xs font-semibold text-[#008CE2] mb-1">Admin Notes:</p>
+              <p className="text-xs text-[#F4F7F5]/80">{inquiry.adminNotes}</p>
             </div>
           )}
 
           {/* Dates */}
-          <div className="text-xs text-gray-500 mb-4">
+          <div className="text-xs text-[#F4F7F5]/70 mb-4">
             <p>Created: {format(new Date(inquiry.createdAt), 'PPp')}</p>
             <p>Updated: {format(new Date(inquiry.updatedAt), 'PPp')}</p>
           </div>
@@ -343,10 +343,10 @@ export default function AdminInquiriesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between animate-fade-in-up">
         <div>
-          <h1 className="text-3xl font-bold text-black">Service Inquiries</h1>
-          <p className="text-gray-600">Manage client inquiries and invoices</p>
+          <h1 className="text-3xl font-bold text-[#F4F7F5]">Service Inquiries</h1>
+          <p className="text-[#F4F7F5]/80">Manage client inquiries and invoices</p>
         </div>
         <div className="flex items-center gap-3">
           <Select value={filterStatus} onValueChange={setFilterStatus}>
@@ -372,13 +372,13 @@ export default function AdminInquiriesPage() {
 
       {loading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-8 w-8 animate-spin text-sky-500" />
+          <Loader2 className="h-8 w-8 animate-spin text-[#008CE2]" />
         </div>
       ) : inquiries.length === 0 ? (
-        <Card>
+        <Card className="border-[#1F2329] bg-[#0F1113]/80">
           <CardContent className="py-12 text-center">
-            <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-600">No inquiries found</p>
+            <FileText className="h-12 w-12 text-[#F4F7F5]/40 mx-auto mb-4" />
+            <p className="text-[#F4F7F5]/70">No inquiries found</p>
           </CardContent>
         </Card>
       ) : (
