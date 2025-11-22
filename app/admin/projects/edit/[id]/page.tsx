@@ -23,9 +23,9 @@ export default function EditProjectPage() {
 
   return (
     <div className="container mx-auto py-10">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-black">Edit Project</h1>
-        <p className="text-gray-600 mt-2">
+      <div className="mb-8 animate-fade-in-up">
+        <h1 className="text-3xl font-bold text-[#F4F7F5]">Edit Project</h1>
+        <p className="text-[#F4F7F5]/80 mt-2">
           Update the project details
         </p>
       </div>

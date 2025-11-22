@@ -127,13 +127,13 @@ export default function AdminProjectsPage() {
     <div className="container mx-auto py-10">
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-black">Projects Management</h1>
-          <p className="text-gray-600 mt-2">
+          <h1 className="text-3xl font-bold text-[#F4F7F5]">Projects Management</h1>
+          <p className="text-[#F4F7F5]/80 mt-2">
             Manage all projects, create new ones, and edit existing projects
           </p>
         </div>
         <Link href="/admin/projects/new">
-          <Button size="lg" className="gap-2 bg-sky-500 hover:bg-sky-600 text-white shadow-md">
+          <Button size="lg" className="gap-2 bg-[#008CE2] hover:bg-[#06B9D0] text-white shadow-md transition-all duration-300">
             <Plus className="h-4 w-4" />
             New Project
           </Button>
@@ -142,44 +142,44 @@ export default function AdminProjectsPage() {
 
       <div className="mb-6">
         <div className="relative max-w-md">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-3 h-4 w-4 text-[#F4F7F5]/70" />
           <Input
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 bg-white border-sky-200 text-black placeholder:text-gray-400 focus:ring-sky-500"
+            className="pl-10 bg-[#0F1113]/80 border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/70 focus:ring-[#008CE2]"
           />
         </div>
       </div>
 
       {loading ? (
         <div className="flex items-center justify-center py-20">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-sky-500 border-t-transparent" />
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#008CE2] border-t-transparent" />
         </div>
       ) : (
-        <div className="rounded-lg border border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+        <div className="rounded-lg border border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 animate-fade-in-up">
           <Table>
             <TableHeader>
-              <TableRow className="border-sky-200 hover:bg-sky-50">
-                <TableHead className="w-20 text-black">Image</TableHead>
-                <TableHead className="text-black">Title</TableHead>
-                <TableHead className="text-black">Category</TableHead>
-                <TableHead className="text-black">Status</TableHead>
-                <TableHead className="text-black">Duration</TableHead>
-                <TableHead className="text-black">Budget</TableHead>
-                <TableHead className="text-right text-black">Actions</TableHead>
+              <TableRow className="border-[#1F2329] hover:bg-[#1A1D21]">
+                <TableHead className="w-20 text-[#F4F7F5]">Image</TableHead>
+                <TableHead className="text-[#F4F7F5]">Title</TableHead>
+                <TableHead className="text-[#F4F7F5]">Category</TableHead>
+                <TableHead className="text-[#F4F7F5]">Status</TableHead>
+                <TableHead className="text-[#F4F7F5]">Duration</TableHead>
+                <TableHead className="text-[#F4F7F5]">Budget</TableHead>
+                <TableHead className="text-right text-[#F4F7F5]">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {filteredProjects.length === 0 ? (
-                <TableRow className="border-sky-200">
-                  <TableCell colSpan={7} className="text-center py-10 text-gray-600">
+                <TableRow className="border-[#1F2329]">
+                  <TableCell colSpan={7} className="text-center py-10 text-[#F4F7F5]/70">
                     No projects found
                   </TableCell>
                 </TableRow>
               ) : (
                 filteredProjects.map((project) => (
-                  <TableRow key={project._id} className="border-sky-200 hover:bg-sky-50">
+                  <TableRow key={project._id} className="border-[#1F2329] hover:bg-[#1A1D21] transition-all duration-300">
                     <TableCell>
                       {project.images && project.images.length > 0 ? (
                         <div className="relative h-12 w-12 overflow-hidden rounded-md">
@@ -191,27 +191,27 @@ export default function AdminProjectsPage() {
                           />
                         </div>
                       ) : (
-                        <div className="h-12 w-12 rounded-md bg-sky-100" />
+                        <div className="h-12 w-12 rounded-md bg-[#1A1D21]" />
                       )}
                     </TableCell>
-                    <TableCell className="font-medium text-black">{project.title}</TableCell>
-                    <TableCell className="text-gray-700">{project.category}</TableCell>
+                    <TableCell className="font-medium text-[#F4F7F5]">{project.title}</TableCell>
+                    <TableCell className="text-[#F4F7F5]/80">{project.category}</TableCell>
                     <TableCell>
                       <Badge className={getStatusColor(project.status)}>
                         {project.status}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-gray-700">{project.duration} weeks</TableCell>
-                    <TableCell className="text-gray-700">{project.budget}</TableCell>
+                    <TableCell className="text-[#F4F7F5]/80">{project.duration} weeks</TableCell>
+                    <TableCell className="text-[#F4F7F5]/80">{project.budget}</TableCell>
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
                         <Link href={`/projects/${project.id}`} target="_blank">
-                          <Button variant="ghost" size="icon" title="View on website" className="text-sky-600 hover:text-sky-700 hover:bg-sky-100">
+                          <Button variant="ghost" size="icon" title="View on website" className="text-[#008CE2] hover:text-[#06B9D0] hover:bg-[#1A1D21]">
                             <Eye className="h-4 w-4" />
                           </Button>
                         </Link>
                         <Link href={`/admin/projects/edit/${project._id}`}>
-                          <Button variant="ghost" size="icon" title="Edit project" className="text-sky-600 hover:text-sky-700 hover:bg-sky-100">
+                          <Button variant="ghost" size="icon" title="Edit project" className="text-[#008CE2] hover:text-[#06B9D0] hover:bg-[#1A1D21]">
                             <Pencil className="h-4 w-4" />
                           </Button>
                         </Link>
@@ -235,16 +235,16 @@ export default function AdminProjectsPage() {
       )}
 
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent className="bg-white border-sky-200">
+        <AlertDialogContent className="bg-[#0F1113] border-[#1F2329]">
           <AlertDialogHeader>
-            <AlertDialogTitle className="text-black">Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription className="text-gray-600">
+            <AlertDialogTitle className="text-[#F4F7F5]">Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription className="text-[#F4F7F5]/80">
               This action cannot be undone. This will permanently delete the project
               and remove all associated images from Cloudinary.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel disabled={deleting} className="border-sky-200 hover:bg-sky-50">Cancel</AlertDialogCancel>
+            <AlertDialogCancel disabled={deleting} className="border-[#1F2329] hover:bg-[#1A1D21] text-[#F4F7F5]">Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDelete}
               disabled={deleting}

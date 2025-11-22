@@ -60,20 +60,20 @@ export default function ClientRegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sky-50 via-white to-sky-50 p-4">
-      <Card className="w-full max-w-md border-sky-200 bg-white shadow-xl shadow-sky-200/30">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#08090A] via-[#0F1113] to-[#08090A] p-4 animate-fade-in-up">
+      <Card className="w-full max-w-md border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl shadow-xl shadow-[#008CE2]/20">
         <CardHeader className="space-y-2">
-          <CardTitle className="text-3xl font-bold text-center text-black">
+          <CardTitle className="text-3xl font-bold text-center text-[#F4F7F5]">
             Create Account
           </CardTitle>
-          <CardDescription className="text-center text-gray-600">
+          <CardDescription className="text-center text-[#F4F7F5]/70">
             Register to access your client dashboard
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-black">Full Name *</Label>
+              <Label htmlFor="name" className="text-[#F4F7F5]">Full Name *</Label>
               <Input
                 id="name"
                 type="text"
@@ -81,12 +81,12 @@ export default function ClientRegisterPage() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-black">Email *</Label>
+              <Label htmlFor="email" className="text-[#F4F7F5]">Email *</Label>
               <Input
                 id="email"
                 type="email"
@@ -94,12 +94,12 @@ export default function ClientRegisterPage() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-black">Password *</Label>
+              <Label htmlFor="password" className="text-[#F4F7F5]">Password *</Label>
               <Input
                 id="password"
                 type="password"
@@ -108,39 +108,39 @@ export default function ClientRegisterPage() {
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
                 minLength={6}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
               />
-              <p className="text-xs text-gray-600">Minimum 6 characters</p>
+              <p className="text-xs text-[#F4F7F5]/70">Minimum 6 characters</p>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="text-black">Phone</Label>
+              <Label htmlFor="phone" className="text-[#F4F7F5]">Phone</Label>
               <Input
                 id="phone"
                 type="tel"
                 placeholder="+1 234 567 8900"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="company" className="text-black">Company</Label>
+              <Label htmlFor="company" className="text-[#F4F7F5]">Company</Label>
               <Input
                 id="company"
                 type="text"
                 placeholder="Your Company"
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="bg-white border-sky-200 text-black"
+                className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 transition-all duration-300"
               />
             </div>
 
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-sky-500 text-white hover:bg-sky-600"
+              className="w-full bg-[#008CE2] text-white hover:bg-[#06B9D0] hover:scale-105 transition-all duration-300"
             >
               {loading ? (
                 <>
@@ -152,15 +152,15 @@ export default function ClientRegisterPage() {
               )}
             </Button>
 
-            <div className="text-center text-sm text-gray-600">
+            <div className="text-center text-sm text-[#F4F7F5]/70">
               Already have an account?{" "}
-              <Link href="/client/login" className="text-sky-500 hover:text-sky-600 font-semibold">
+              <Link href="/client/login" className="text-[#008CE2] hover:text-[#06B9D0] font-semibold transition-colors duration-300">
                 Login here
               </Link>
             </div>
 
             <div className="text-center">
-              <Link href="/" className="text-sm text-gray-600 hover:text-sky-600">
+              <Link href="/" className="text-sm text-[#F4F7F5]/70 hover:text-[#008CE2] transition-colors duration-300">
                 ← Back to Home
               </Link>
             </div>

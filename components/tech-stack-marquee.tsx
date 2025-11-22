@@ -66,15 +66,15 @@ export function TechStackMarquee() {
       onMouseEnter={() => setPausedRow(rowId)}
       onMouseLeave={() => setPausedRow(null)}
     >
-      <div className="group w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl bg-white/80 border border-sky-200 backdrop-blur-xl flex flex-col items-center justify-center gap-2 hover:bg-white hover:border-sky-400 transition-all duration-300 hover:scale-105 shadow-lg shadow-sky-200/30">
+      <div className="group w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-2xl bg-[#0F1113]/80 border border-[#1F2329] backdrop-blur-xl flex flex-col items-center justify-center gap-2 hover:bg-[#1A1D21] hover:border-[#008CE2] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#008CE2]/10 hover:shadow-xl hover:shadow-[#06B9D0]/20">
         {tech.bg ? (
-          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl ${tech.bg} flex items-center justify-center border border-sky-200`}>
+            <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl ${tech.bg} flex items-center justify-center border border-[#1F2329]`}>
             <span className={`text-2xl sm:text-3xl font-bold ${tech.color}`}>{tech.icon}</span>
           </div>
         ) : (
           <span className={`text-3xl sm:text-4xl ${tech.color}`}>{tech.icon}</span>
         )}
-        <span className="text-[10px] sm:text-xs font-medium text-gray-700 group-hover:text-sky-600 transition-colors">
+        <span className="text-[10px] sm:text-xs font-medium text-[#F4F7F5]/80 group-hover:text-[#06B9D0] transition-colors">
           {tech.name}
         </span>
       </div>
@@ -82,17 +82,17 @@ export function TechStackMarquee() {
   )
 
   return (
-    <section className="text-black py-16 sm:py-20 overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white">
+    <section className="text-[#F4F7F5] py-16 sm:py-20 overflow-hidden bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A]">
       <div className="container mx-auto px-4">
         {/* Header */}
 <div className="flex items-center justify-between mb-12 flex-col sm:flex-row sm:items-center">
   <div className="text-center w-full"> {/* Added text-center and w-full */}
-    <h2 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl"> {/* Removed text-center sm:text-left */}
+    <h2 className="text-4xl font-extrabold tracking-tight text-[#F4F7F5] sm:text-5xl animate-fade-in-up"> {/* Removed text-center sm:text-left */}
       Our <span className="text-sky-500">Technology</span>
       <br />
       Stack
     </h2>
-    <p className="mt-3 text-sm sm:text-base text-gray-700 max-w-xl mx-auto"> {/* Added mx-auto */}
+    <p className="mt-3 text-sm sm:text-base text-[#F4F7F5]/80 max-w-xl mx-auto"> {/* Added mx-auto */}
       We combine cutting-edge development tools with professional creative software for complete digital solutions
     </p>
   </div>
@@ -102,7 +102,7 @@ export function TechStackMarquee() {
         <div className="relative">
           {/* First Row - Frontend Technologies */}
           <div className="mb-2">
-            <div className="text-xs font-semibold text-sky-600 mb-3 pl-3">FRONTEND & MOBILE</div>
+            <div className="text-xs font-semibold text-[#008CE2] mb-3 pl-3">FRONTEND & MOBILE</div>
             <div className="flex overflow-hidden mb-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
               <div
                 className={`flex animate-scroll-right whitespace-nowrap`}
@@ -180,11 +180,11 @@ export function TechStackMarquee() {
         {/* Stats Section */}
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-sky-500">40+</div>
-            <div className="text-xs sm:text-sm text-gray-600 mt-1">Technologies</div>
+            <div className="text-3xl sm:text-4xl font-bold text-[#008CE2]">40+</div>
+            <div className="text-xs sm:text-sm text-[#F4F7F5]/70 mt-1">Technologies</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-sky-500">100%</div>
+            <div className="text-3xl sm:text-4xl font-bold text-[#008CE2]">100%</div>
             <div className="text-xs sm:text-sm text-gray-600 mt-1">Modern Stack</div>
           </div>
           <div className="text-center">

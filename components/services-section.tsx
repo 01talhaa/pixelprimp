@@ -51,10 +51,10 @@ export function ServicesSection() {
     )
   }
   return (
-    <section id="services" className="container mx-auto px-4 py-16 sm:py-20 bg-gradient-to-b from-white via-sky-50 to-white">
-      <div className="mb-12 text-center">
-        <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-black sm:text-5xl">Our <span className="text-sky-500">Services</span></h2>
-        <p className="mx-auto max-w-2xl text-lg text-gray-700">
+    <section id="services" className="container mx-auto px-4 py-16 sm:py-20 bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A]">
+      <div className="mb-12 text-center animate-fade-in-up">
+        <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-[#F4F7F5] sm:text-5xl">Our <span className="text-[#008CE2]">Services</span></h2>
+        <p className="mx-auto max-w-2xl text-lg text-[#F4F7F5]/80">
           From concept to completion, we deliver premium creative solutions that drive results
         </p>
       </div>
@@ -65,22 +65,23 @@ export function ServicesSection() {
           return (
           <Card
             key={service.id}
-            className="group liquid-glass border border-sky-200 bg-white/80 backdrop-blur-xl transition-all hover:border-sky-300 hover:bg-white/90 shadow-lg shadow-sky-200/30"
+            className="group liquid-glass border border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl transition-all hover:border-[#008CE2] hover:bg-[#1A1D21]/90 shadow-lg shadow-[#008CE2]/10 hover:shadow-xl hover:shadow-[#06B9D0]/20 hover:scale-[1.02] animate-fade-in-up"
+            style={{ animationDelay: `${service.id.charCodeAt(0) * 50}ms` }}
           >
             <CardHeader>
               <div
                 className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${service.color}`}
               >
-                <IconComponent className="h-6 w-6 text-white" />
+                <IconComponent className="h-6 w-6 text-[#F4F7F5]" />
               </div>
-              <CardTitle className="text-xl text-black">{service.title}</CardTitle>
+              <CardTitle className="text-xl text-[#F4F7F5] group-hover:text-[#06B9D0] transition-colors">{service.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-sm text-gray-700">{service.description}</p>
+              <p className="text-sm text-[#F4F7F5]/80">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.slice(0, 3).map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-xs text-gray-600">
-                    <Check className="h-3 w-3 text-sky-500 flex-shrink-0" />
+                  <li key={idx} className="flex items-center gap-2 text-xs text-[#F4F7F5]/70">
+                    <Check className="h-3 w-3 text-[#008CE2] flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -88,7 +89,7 @@ export function ServicesSection() {
               <Button
                 asChild
                 variant="ghost"
-                className="group/btn w-full justify-between text-sky-500 hover:bg-sky-50 hover:text-sky-600"
+                className="group/btn w-full justify-between text-[#008CE2] hover:bg-[#1A1D21] hover:text-[#06B9D0]"
               >
                 <Link href={`/services/${service.id}`}>
                   Learn More
@@ -100,11 +101,11 @@ export function ServicesSection() {
         )})}
       </div>
 
-      <div className="mt-12 text-center">
+      <div className="mt-12 text-center animate-scale-in delay-500">
         <Button
           asChild
           size="lg"
-          className="rounded-full bg-sky-500 px-8 text-white hover:bg-sky-600 shadow-lg shadow-sky-400/30"
+          className="rounded-full bg-[#008CE2] px-8 text-[#F4F7F5] hover:bg-[#06B9D0] shadow-lg shadow-[#008CE2]/30 hover:shadow-xl hover:shadow-[#06B9D0]/40 animate-pulse-glow"
         >
           <Link href="/services">
             View All Services

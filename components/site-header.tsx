@@ -88,25 +88,25 @@ export function SiteHeader() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 p-4">
+    <header className="sticky top-0 z-50 p-4 animate-fade-in">
       <div className="container mx-auto max-w-4xl">
-        <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full shadow-md shadow-sky-200/30">
+        <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full shadow-md shadow-[#008CE2]/30">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-1.5">
+          <Link href="/" className="flex items-center gap-1.5 hover:scale-105 transition-transform duration-300">
             <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={20} height={20} className="h-5 w-5" />
             <span className="font-semibold tracking-wide">
-              <span className="text-sky-500">Pixel</span>
-              <span className="text-black">Primp</span>
+              <span className="text-[#008CE2]">Pixel</span>
+              <span className="text-[#F4F7F5]">Primp</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-6 text-sm text-gray-700 md:flex">
+          <nav className="hidden items-center gap-6 text-sm text-[#F4F7F5] md:flex">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-sky-500 transition-colors font-medium">
+              <Link key={l.href} href={l.href} className="hover:text-[#06B9D0] transition-all duration-300 font-medium hover:scale-105">
                 {l.label}
               </Link>
-            ))}
+            ))}  
           </nav>
 
           {/* Desktop CTA */}
@@ -115,17 +115,17 @@ export function SiteHeader() {
               client ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger className="flex items-center gap-2 focus:outline-none">
-                    <Avatar className="h-9 w-9 border-2 border-sky-400">
-                      <AvatarImage src={client.avatar} alt={client.name || 'Client'} />
-                      <AvatarFallback className="bg-sky-100 text-sky-700 font-semibold">
+                    <Avatar className="h-9 w-9 border-2 border-[#008CE2]">
+                      <AvatarImage src={client.avatar} alt={client.name} />
+                      <AvatarFallback className="bg-[#1A1D21] text-[#008CE2] font-semibold">
                         {client.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'C'}
                       </AvatarFallback>
                     </Avatar>
-                    <span className="text-sm font-medium text-gray-700">{client.name}</span>
+                    <span className="text-sm font-medium text-white">{client.name}</span>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-48 bg-white/95 backdrop-blur-sm border-sky-200">
-                    <DropdownMenuLabel className="text-gray-700">My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator className="bg-sky-200" />
+                  <DropdownMenuContent align="end" className="w-48 bg-[#0F1113]/95 backdrop-blur-sm border-[#1F2329]">
+                    <DropdownMenuLabel className="text-[#F4F7F5]">My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator className="bg-[#1F2329]" />
                     <DropdownMenuItem asChild>
                       <Link href="/client/dashboard" className="flex items-center gap-2 cursor-pointer">
                         <User className="h-4 w-4" />
@@ -138,8 +138,8 @@ export function SiteHeader() {
                         <span>Profile</span>
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator className="bg-sky-200" />
-                    <DropdownMenuItem onClick={handleLogout} className="flex items-center gap-2 cursor-pointer text-red-600">
+                    <DropdownMenuSeparator className="bg-[#1F2329]" />
+                    <DropdownMenuItem onClick={handleLogout} className="flex items-center gap-2 cursor-pointer text-[#EF4444] hover:text-[#DC2626]">
                       <LogOut className="h-4 w-4" />
                       <span>Logout</span>
                     </DropdownMenuItem>
@@ -148,9 +148,9 @@ export function SiteHeader() {
               ) : (
                 <Button
                   asChild
-                  className="bg-sky-500 text-white font-medium rounded-lg px-6 py-2.5
-                             hover:bg-sky-600 hover:shadow-lg hover:scale-[1.02] shadow-sky-400/30
-                             transition-all"
+                  className="bg-[#008CE2] text-[#F4F7F5] font-medium rounded-lg px-6 py-2.5
+                             hover:bg-[#06B9D0] hover:shadow-xl hover:scale-[1.05] shadow-[#008CE2]/30
+                             transition-all duration-300"
                 >
                   <Link href="/client/login">Client Login</Link>
                 </Button>
@@ -165,31 +165,31 @@ export function SiteHeader() {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="border-sky-300 bg-white/90 text-black hover:bg-sky-50"
+                  className="border-[#1F2329] bg-[#0F1113]/90 text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2]"
                 >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="liquid-glass border-sky-200 p-0 w-64 flex flex-col bg-white/95">
+              <SheetContent side="right" className="liquid-glass border-[#1F2329] p-0 w-64 flex flex-col bg-[#0F1113]/95">
                 {/* Brand Header */}
-                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-sky-200">
+                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-[#1F2329]">
                   <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={24} height={24} className="h-6 w-6" />
                   <span className="font-semibold tracking-wide text-lg">
-                    <span className="text-sky-500">Pixel</span>
-                    <span className="text-black">Primp</span>
+                    <span className="text-[#008CE2]">Pixel</span>
+                    <span className="text-[#F4F7F5]">Primp</span>
                   </span>
                 </div>
 
                 {/* Nav Links */}
-                <nav className="flex flex-col gap-1 mt-2 text-gray-700">
+                <nav className="flex flex-col gap-1 mt-2 text-[#F4F7F5]">
                   {links.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-sky-50 hover:text-sky-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-[#1A1D21] hover:text-[#008CE2] transition-colors"
                     >
-                      <span className="inline-flex items-center justify-center w-5 h-5 text-sky-500">
+                      <span className="inline-flex items-center justify-center w-5 h-5 text-[#008CE2]">
                         <l.icon className="h-4 w-4" />
                       </span>
                       <span className="text-sm font-medium">{l.label}</span>
@@ -198,26 +198,26 @@ export function SiteHeader() {
                 </nav>
 
                 {/* CTA Button at Bottom */}
-                <div className="mt-auto border-t border-sky-200 p-4 space-y-2">
+                <div className="mt-auto border-t border-[#1F2329] p-4 space-y-2">
                   {!loading && (
                     client ? (
                       <>
-                        <div className="flex items-center gap-3 px-2 py-3 bg-sky-50 rounded-lg mb-3">
-                          <Avatar className="h-10 w-10 border-2 border-sky-400">
-                            <AvatarImage src={client.avatar} alt={client.name || 'Client'} />
-                            <AvatarFallback className="bg-sky-100 text-sky-700 font-semibold">
+                        <div className="flex items-center gap-3 px-2 py-3 bg-[#1A1D21] rounded-lg mb-3">
+                          <Avatar className="h-10 w-10 border-2 border-[#008CE2]">
+                            <AvatarImage src={client.avatar} alt={client.name} />
+                            <AvatarFallback className="bg-[#1A1D21] text-[#008CE2] font-semibold">
                               {client.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'C'}
                             </AvatarFallback>
                           </Avatar>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm font-semibold text-gray-900 truncate">{client.name}</p>
-                            <p className="text-xs text-gray-600 truncate">{client.email}</p>
+                            <p className="text-xs text-[#F4F7F5]/70 truncate">{client.email}</p>
                           </div>
                         </div>
                         <Button
                           asChild
-                          className="w-full bg-sky-500 text-white font-medium rounded-lg px-6 py-2.5
-                                     hover:bg-sky-600 hover:shadow-lg hover:scale-[1.02] shadow-sky-400/30
+                          className="w-full bg-[#008CE2] text-[#F4F7F5] font-medium rounded-lg px-6 py-2.5
+                                     hover:bg-[#06B9D0] hover:shadow-lg hover:scale-[1.02] shadow-[#008CE2]/40
                                      transition-all"
                         >
                           <Link href="/client/dashboard">Dashboard</Link>
@@ -225,8 +225,8 @@ export function SiteHeader() {
                         <Button
                           asChild
                           variant="outline"
-                          className="w-full border-sky-200 bg-white text-black font-medium rounded-lg px-6 py-2.5
-                                     hover:bg-sky-50 transition-all"
+                          className="w-full border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] font-medium rounded-lg px-6 py-2.5
+                                     hover:bg-[#1A1D21] hover:border-[#008CE2] transition-all"
                         >
                           <Link href="/client/profile">Profile</Link>
                         </Button>
@@ -244,8 +244,8 @@ export function SiteHeader() {
                       <>
                         <Button
                           asChild
-                          className="w-full bg-sky-500 text-white font-medium rounded-lg px-6 py-2.5
-                                     hover:bg-sky-600 hover:shadow-lg hover:scale-[1.02] shadow-sky-400/30
+                          className="w-full bg-[#008CE2] text-[#F4F7F5] font-medium rounded-lg px-6 py-2.5
+                                     hover:bg-[#06B9D0] hover:shadow-lg hover:scale-[1.02] shadow-[#008CE2]/40
                                      transition-all"
                         >
                           <Link href="/client/login">Client Login</Link>
@@ -253,8 +253,8 @@ export function SiteHeader() {
                         <Button
                           asChild
                           variant="outline"
-                          className="w-full border-sky-200 bg-white text-black font-medium rounded-lg px-6 py-2.5
-                                     hover:bg-sky-50 transition-all"
+                          className="w-full border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] font-medium rounded-lg px-6 py-2.5
+                                     hover:bg-[#1A1D21] hover:border-[#008CE2] transition-all"
                         >
                           <Link href="https://wa.me/8801401658685?text=Hi!%20I'd%20like%20to%20get%20a%20quote">Get a Quote</Link>
                         </Button>

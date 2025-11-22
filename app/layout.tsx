@@ -596,14 +596,14 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
-        <div className="fixed inset-0 z-0 bg-gradient-to-br from-white via-sky-50 to-white">
+      <body className="bg-[#08090A] text-[#F4F7F5] antialiased">
+        <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#08090A] via-[#0F1113] to-[#08090A]">
           <Plasma
-            color="#3b82f6"
-            speed={0.8}
+            color="#008CE2"
+            speed={0.6}
             direction="forward"
-            scale={1.5}
-            opacity={0.15}
+            scale={1.8}
+            opacity={0.08}
             mouseInteractive={true}
           />
         </div>

@@ -44,16 +44,16 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative">
+    <div className="min-h-screen flex items-center justify-center p-4 relative bg-[#08090A]">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#008CE2]/10 via-[#08090A] to-[#08090A]" />
 
-      <Card className="w-full max-w-md relative border-white/10 bg-black/40 backdrop-blur-xl">
+      <Card className="w-full max-w-md relative border-[#1F2329] bg-[#0F1113]/90 backdrop-blur-xl animate-fade-in-up shadow-2xl">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold text-center bg-gradient-to-r from-purple-400 to-lime-400 bg-clip-text text-transparent">
+          <CardTitle className="text-3xl font-bold text-center bg-gradient-to-r from-[#008CE2] to-[#06B9D0] bg-clip-text text-transparent">
             Welcome Back
           </CardTitle>
-          <CardDescription className="text-center text-white/60">Sign in to your account to continue</CardDescription>
+          <CardDescription className="text-center text-[#F4F7F5]/70">Sign in to your account to continue</CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="client" className="w-full">
@@ -72,7 +72,7 @@ export default function LoginPage() {
                     type="email"
                     placeholder="client@example.com"
                     required
-                    className="bg-white/5 border-white/10"
+                    className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 focus:border-[#008CE2] transition-colors duration-300"
                   />
                 </div>
                 <div className="space-y-2">
@@ -83,7 +83,7 @@ export default function LoginPage() {
                     type="password"
                     placeholder="••••••••"
                     required
-                    className="bg-white/5 border-white/10"
+                    className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 focus:border-[#008CE2] transition-colors duration-300"
                   />
                 </div>
                 {error && (
@@ -91,16 +91,16 @@ export default function LoginPage() {
                     <AlertDescription>{error}</AlertDescription>
                   </Alert>
                 )}
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" className="w-full bg-[#008CE2] hover:bg-[#06B9D0] hover:scale-105 transition-all duration-300" disabled={loading}>
                   {loading ? "Signing in..." : "Sign In"}
                 </Button>
-                <p className="text-sm text-center text-white/60">
+                <p className="text-sm text-center text-[#F4F7F5]/70">
                   Don't have an account?{" "}
-                  <Link href="/register" className="text-purple-400 hover:text-purple-300">
+                  <Link href="/register" className="text-[#008CE2] hover:text-[#06B9D0] transition-colors duration-300">
                     Register here
                   </Link>
                 </p>
-                <p className="text-xs text-center text-white/40 mt-4">Demo: client@example.com / client123</p>
+                <p className="text-xs text-center text-[#F4F7F5]/50 mt-4">Demo: client@example.com / client123</p>
               </form>
             </TabsContent>
 
@@ -114,7 +114,7 @@ export default function LoginPage() {
                     type="email"
                     placeholder="admin@pqrix.com"
                     required
-                    className="bg-white/5 border-white/10"
+                    className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 focus:border-[#008CE2] transition-colors duration-300"
                   />
                 </div>
                 <div className="space-y-2">
@@ -125,7 +125,7 @@ export default function LoginPage() {
                     type="password"
                     placeholder="••••••••"
                     required
-                    className="bg-white/5 border-white/10"
+                    className="bg-[#1A1D21] border-[#1F2329] text-[#F4F7F5] placeholder:text-[#F4F7F5]/50 focus:border-[#008CE2] transition-colors duration-300"
                   />
                 </div>
                 {error && (
@@ -133,10 +133,10 @@ export default function LoginPage() {
                     <AlertDescription>{error}</AlertDescription>
                   </Alert>
                 )}
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" className="w-full bg-[#008CE2] hover:bg-[#06B9D0] hover:scale-105 transition-all duration-300" disabled={loading}>
                   {loading ? "Signing in..." : "Sign In as Admin"}
                 </Button>
-                <p className="text-xs text-center text-white/40 mt-4">Demo: admin@pqrix.com / admin123</p>
+                <p className="text-xs text-center text-[#F4F7F5]/50 mt-4">Demo: admin@pqrix.com / admin123</p>
               </form>
             </TabsContent>
           </Tabs>

@@ -4,7 +4,7 @@ import LazyVideo from "./lazy-video"
 
 export function Hero() {
   const buttonNew = (
-    <Button asChild className="rounded-full bg-sky-400 px-6 text-white hover:bg-sky-500 shadow-lg shadow-sky-400/30">
+    <Button asChild className="rounded-full bg-[#008CE2] px-8 py-6 text-[#F4F7F5] font-semibold hover:bg-[#06B9D0] shadow-lg shadow-[#008CE2]/30 hover:shadow-xl hover:shadow-[#06B9D0]/40 text-base animate-pulse-glow">
       <a href="https://wa.me/8801401658685?text=Hi!%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer">
         Chat With Us
       </a>
@@ -12,30 +12,31 @@ export function Hero() {
   )
 
   return (
-    <section className="relative isolate overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#08090A] via-[#0F1113] to-[#08090A]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
-          <div className="mb-5 flex items-center gap-2">
-            <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={32} height={32} className="h-8 w-8" />
+          <div className="mb-5 flex items-center gap-2 animate-fade-in">
+            <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={32} height={32} className="h-8 w-8 animate-float" />
             <p className="text-sm uppercase tracking-[0.25em]">
-              <span className="text-sky-500/80">Pixel</span>
-              <span className="text-black/80">Primp</span>
+              <span className="text-[#008CE2]">Pixel</span>
+              <span className="text-[#F4F7F5]">Primp</span>
             </p>
           </div>
-          <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-black">
+          <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-[#F4F7F5] animate-fade-in-up delay-100">
             <span className="block">SOFTWARE &</span>
-            <span className="block text-sky-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">CREATIVE STUDIO</span>
+            <span className="block text-[#008CE2] drop-shadow-[0_0_30px_rgba(0,140,226,0.5)]">CREATIVE STUDIO</span>
             <span className="block">FOR DIGITAL EXCELLENCE</span>
           </h1>
-          <div className="mt-6">{buttonNew}</div>
+          <div className="mt-6 animate-scale-in delay-300">{buttonNew}</div>
 
           {/* Phone grid mimic */}
           <div className="mt-10 grid w-full gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
             {phoneData.map((p, i) => {
               const visibility = i <= 2 ? "block" : i === 3 ? "hidden md:block" : i === 4 ? "hidden xl:block" : "hidden"
+              const animationDelay = i * 100 + 400
 
               return (
-                <div key={i} className={visibility}>
+                <div key={i} className={`${visibility} animate-fade-in-up delay-${animationDelay}`} style={{ animationDelay: `${animationDelay}ms` }}>
                   <PhoneCard title={p.title} sub={p.sub} tone={p.tone} gradient={p.gradient} videoSrc={p.videoSrc} />
                 </div>
               )
@@ -61,8 +62,8 @@ function PhoneCard({
   videoSrc?: string
 }) {
   return (
-    <div className="relative rounded-[28px] glass-border bg-white/90 p-2 shadow-lg shadow-sky-200/50">
-      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-sky-100 to-sky-200">
+    <div className="relative rounded-[28px] glass-border bg-[#0F1113]/90 p-2 shadow-lg shadow-[#008CE2]/20 hover:shadow-xl hover:shadow-[#06B9D0]/30 transition-all duration-300 hover:scale-[1.02]">
+      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#1A1D21] to-[#0F1113]">
         <LazyVideo
           src={
             videoSrc ??
@@ -77,11 +78,11 @@ function PhoneCard({
         />
 
         <div className="relative z-10 p-3">
-          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-sky-300/40" />
+          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-[#008CE2]/40" />
           <div className="space-y-1 px-1">
-            <div className="text-3xl font-bold leading-snug text-white drop-shadow-lg">{title}</div>
-            <p className="text-xs text-white/90 drop-shadow">{sub}</p>
-            <div className="mt-3 inline-flex items-center rounded-full bg-sky-500/90 px-2 py-0.5 text-[10px] uppercase tracking-wider text-white">
+            <div className="text-3xl font-bold leading-snug text-[#F4F7F5] drop-shadow-lg">{title}</div>
+            <p className="text-xs text-[#F4F7F5]/90 drop-shadow">{sub}</p>
+            <div className="mt-3 inline-flex items-center rounded-full bg-[#008CE2]/90 px-2 py-0.5 text-[10px] uppercase tracking-wider text-[#F4F7F5]">
               {tone === "calm" ? "pqrix app" : tone}
             </div>
           </div>

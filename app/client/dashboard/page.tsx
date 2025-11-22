@@ -111,8 +111,8 @@ export default function ClientDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
+      <div className="min-h-screen flex items-center justify-center bg-[#08090A]">
+        <Loader2 className="w-8 h-8 animate-spin text-[#008CE2]" />
       </div>
     )
   }
@@ -122,21 +122,31 @@ export default function ClientDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#08090A] via-[#0F1113] to-[#08090A]">
       {/* Header */}
-      <header className="border-b border-sky-200 bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
+      <header className="border-b border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm shadow-[#008CE2]/10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/client/dashboard"
-            className="text-2xl font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent"
-          >
-            My Dashboard
+          <div className="flex items-center gap-6">
+                      <Link href="/" className="flex items-center gap-1.5 hover:scale-105 transition-transform duration-300">
+            <Image src="/icons/pqrix-white.svg" alt="PixelPrimp logo" width={20} height={20} className="h-5 w-5" />
+            <span className="font-semibold tracking-wide">
+              <span className="text-[#008CE2]">Pixel</span>
+              <span className="text-[#F4F7F5]">Primp</span>
+            </span>
           </Link>
+            
+            <Link
+              href="/client/dashboard"
+              className="text-2xl font-bold bg-gradient-to-r from-[#008CE2] to-[#06B9D0] bg-clip-text text-transparent"
+            >
+              Dashboard
+            </Link>
+          </div>
           <div className="flex items-center gap-3">
             <Link href="/client/profile">
               <Button
                 variant="outline"
-                className="border-sky-200 bg-white text-black hover:bg-sky-50"
+                className="border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2]"
               >
                 <User className="w-4 h-4 mr-2" />
                 Profile
@@ -145,7 +155,7 @@ export default function ClientDashboard() {
             <Button
               onClick={handleLogout}
               variant="outline"
-              className="border-sky-200 bg-white text-black hover:bg-sky-50"
+              className="border-[#1F2329] bg-[#0F1113] text-[#F4F7F5] hover:bg-[#1A1D21] hover:border-[#008CE2] hover:scale-105 transition-all duration-300"
             >
               <LogOut className="w-4 h-4 mr-2" />
               Logout
@@ -156,39 +166,39 @@ export default function ClientDashboard() {
 
       <div className="container mx-auto px-4 py-8 space-y-8">
         {/* Welcome Section */}
-        <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+        <Card className="border-[#1F2329] bg-[#0F1113]/80 backdrop-blur-xl shadow-lg shadow-[#008CE2]/20 animate-fade-in-up">
           <CardHeader>
             <div className="flex items-center gap-4">
               {client.avatar ? (
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-sky-200">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#008CE2]">
                   <Image src={client.avatar} alt={client.name} fill className="object-cover" />
                 </div>
               ) : (
-                <div className="w-16 h-16 rounded-full bg-sky-100 flex items-center justify-center border-2 border-sky-200">
-                  <User className="w-8 h-8 text-sky-600" />
+                <div className="w-16 h-16 rounded-full bg-[#1A1D21] flex items-center justify-center border-2 border-[#008CE2]">
+                  <User className="w-8 h-8 text-[#008CE2]" />
                 </div>
               )}
               <div>
-                <CardTitle className="text-2xl text-black">Welcome, {client.name}!</CardTitle>
-                <p className="text-gray-600 mt-1">{client.email}</p>
-                {client.company && <p className="text-sm text-gray-600">{client.company}</p>}
+                <CardTitle className="text-2xl text-[#F4F7F5]">Welcome, {client.name}!</CardTitle>
+                <p className="text-[#F4F7F5]/80 mt-1">{client.email}</p>
+                {client.company && <p className="text-sm text-[#F4F7F5]/70">{client.company}</p>}
               </div>
             </div>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex items-center gap-3 p-4 bg-sky-50 rounded-lg border border-sky-200">
-                <FolderKanban className="w-8 h-8 text-sky-600" />
+              <div className="flex items-center gap-3 p-4 bg-[#1A1D21] rounded-lg border border-[#1F2329] hover:border-[#008CE2] transition-all duration-300">
+                <FolderKanban className="w-8 h-8 text-[#008CE2]" />
                 <div>
-                  <p className="text-2xl font-bold text-black">{projects.length}</p>
-                  <p className="text-sm text-gray-600">Active Projects</p>
+                  <p className="text-2xl font-bold text-[#F4F7F5]">{projects.length}</p>
+                  <p className="text-sm text-[#F4F7F5]/70">Active Projects</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 bg-sky-50 rounded-lg border border-sky-200">
-                <Briefcase className="w-8 h-8 text-sky-600" />
+              <div className="flex items-center gap-3 p-4 bg-[#1A1D21] rounded-lg border border-[#1F2329] hover:border-[#008CE2] transition-all duration-300">
+                <Briefcase className="w-8 h-8 text-[#008CE2]" />
                 <div>
-                  <p className="text-2xl font-bold text-black">{services.length}</p>
-                  <p className="text-sm text-gray-600">Booked Services</p>
+                  <p className="text-2xl font-bold text-[#F4F7F5]">{services.length}</p>
+                  <p className="text-sm text-[#F4F7F5]/70">Booked Services</p>
                 </div>
               </div>
             </div>
@@ -202,8 +212,8 @@ export default function ClientDashboard() {
 
         {/* Projects Section */}
         <div>
-          <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-2">
-            <FolderKanban className="w-6 h-6 text-sky-600" />
+          <h2 className="text-2xl font-bold text-[#F4F7F5] mb-4 flex items-center gap-2">
+            <FolderKanban className="w-6 h-6 text-[#008CE2]" />
             Your Projects
           </h2>
           {projects.length > 0 ? (
@@ -222,11 +232,11 @@ export default function ClientDashboard() {
                       </div>
                     )}
                     <CardHeader>
-                      <CardTitle className="text-black">{project.title}</CardTitle>
-                      <p className="text-sm text-sky-600">{project.category}</p>
+                      <CardTitle className="text-[#F4F7F5]">{project.title}</CardTitle>
+                      <p className="text-sm text-[#008CE2]">{project.category}</p>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-gray-600 line-clamp-2">{project.description}</p>
+                      <p className="text-sm text-[#F4F7F5]/70 line-clamp-2">{project.description}</p>
                       <div className="mt-4">
                         <span
                           className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
@@ -246,12 +256,12 @@ export default function ClientDashboard() {
               ))}
             </div>
           ) : (
-            <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+            <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
               <CardContent className="py-12 text-center">
-                <FolderKanban className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600 mb-4">No projects yet</p>
+                <FolderKanban className="w-12 h-12 text-[#F4F7F5]/30 mx-auto mb-4" />
+                <p className="text-[#F4F7F5]/70 mb-4">No projects yet</p>
                 <Link href="/projects">
-                  <Button className="bg-sky-500 text-white hover:bg-sky-600">
+                  <Button className="bg-[#008CE2] text-white hover:bg-[#06B9D0] hover:scale-105 transition-all duration-300">
                     Browse Projects
                   </Button>
                 </Link>
@@ -262,40 +272,40 @@ export default function ClientDashboard() {
 
         {/* Services Section */}
         <div>
-          <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-2">
-            <Briefcase className="w-6 h-6 text-sky-600" />
+          <h2 className="text-2xl font-bold text-[#F4F7F5] mb-4 flex items-center gap-2">
+            <Briefcase className="w-6 h-6 text-[#008CE2]" />
             Booked Services
           </h2>
           {services.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service) => (
                 <Link key={service.id} href={`/services/${service.id}`}>
-                  <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30 hover:shadow-xl hover:shadow-sky-200/40 transition-all cursor-pointer">
+                  <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 hover:shadow-xl hover:shadow-[#008CE2]/30 hover:scale-105 transition-all duration-300 cursor-pointer">
                     <CardHeader>
                       <div className="flex items-center gap-3">
                         {service.icon && (
                           <div className="text-4xl">{service.icon}</div>
                         )}
                         <div>
-                          <CardTitle className="text-black">{service.title}</CardTitle>
-                          <p className="text-sm text-sky-600">{service.category}</p>
+                          <CardTitle className="text-[#F4F7F5]">{service.title}</CardTitle>
+                          <p className="text-sm text-[#008CE2]">{service.category}</p>
                         </div>
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-gray-600 line-clamp-2">{service.description}</p>
+                      <p className="text-sm text-[#F4F7F5]/70 line-clamp-2">{service.description}</p>
                     </CardContent>
                   </Card>
                 </Link>
               ))}
             </div>
           ) : (
-            <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+            <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20">
               <CardContent className="py-12 text-center">
-                <Briefcase className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-600 mb-4">No services booked yet</p>
+                <Briefcase className="w-12 h-12 text-[#F4F7F5]/30 mx-auto mb-4" />
+                <p className="text-[#F4F7F5]/70 mb-4">No services booked yet</p>
                 <Link href="/services">
-                  <Button className="bg-sky-500 text-white hover:bg-sky-600">
+                  <Button className="bg-[#008CE2] text-white hover:bg-[#06B9D0] hover:scale-105 transition-all duration-300">
                     Browse Services
                   </Button>
                 </Link>

@@ -83,21 +83,21 @@ export default function ClientsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#008CE2]" />
       </div>
     )
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between animate-fade-in-up">
         <div>
-          <h1 className="text-3xl font-bold text-black">Client Management</h1>
-          <p className="text-gray-600 mt-2">Manage client accounts and their projects</p>
+          <h1 className="text-3xl font-bold text-[#F4F7F5]">Client Management</h1>
+          <p className="text-[#F4F7F5]/80 mt-2">Manage client accounts and their projects</p>
         </div>
         <Button
           onClick={() => router.push("/admin/clients/new")}
-          className="bg-sky-500 text-white hover:bg-sky-600"
+          className="bg-[#008CE2] text-white hover:bg-[#06B9D0] transition-all duration-300"
         >
           <Plus className="w-4 h-4 mr-2" />
           Add Client
@@ -106,12 +106,12 @@ export default function ClientsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {clients.map((client) => (
-          <Card key={client._id} className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+          <Card key={client._id} className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 hover:shadow-xl hover:shadow-[#06B9D0]/30 hover:scale-[1.02] transition-all duration-300 animate-fade-in-up">
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
                   {client.avatar ? (
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-sky-200">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#1F2329]">
                       <Image
                         src={client.avatar}
                         alt={client.name}
@@ -120,36 +120,36 @@ export default function ClientsPage() {
                       />
                     </div>
                   ) : (
-                    <div className="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center border-2 border-sky-200">
-                      <span className="text-sky-600 font-semibold text-lg">
+                    <div className="w-12 h-12 rounded-full bg-[#1A1D21] flex items-center justify-center border-2 border-[#1F2329]">
+                      <span className="text-[#008CE2] font-semibold text-lg">
                         {client.name.charAt(0).toUpperCase()}
                       </span>
                     </div>
                   )}
                   <div>
-                    <CardTitle className="text-black text-lg">{client.name}</CardTitle>
-                    <p className="text-sm text-gray-600">{client.email}</p>
+                    <CardTitle className="text-[#F4F7F5] text-lg">{client.name}</CardTitle>
+                    <p className="text-sm text-[#F4F7F5]/70">{client.email}</p>
                   </div>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
               {client.company && (
-                <p className="text-sm text-gray-600">
-                  <span className="font-semibold text-black">Company:</span> {client.company}
+                <p className="text-sm text-[#F4F7F5]/70">
+                  <span className="font-semibold text-[#F4F7F5]">Company:</span> {client.company}
                 </p>
               )}
               {client.phone && (
-                <p className="text-sm text-gray-600">
-                  <span className="font-semibold text-black">Phone:</span> {client.phone}
+                <p className="text-sm text-[#F4F7F5]/70">
+                  <span className="font-semibold text-[#F4F7F5]">Phone:</span> {client.phone}
                 </p>
               )}
-              <div className="flex gap-2 text-sm text-gray-600">
-                <span className="font-semibold text-black">Projects:</span>
+              <div className="flex gap-2 text-sm text-[#F4F7F5]/70">
+                <span className="font-semibold text-[#F4F7F5]">Projects:</span>
                 <span>{client.projects?.length || 0}</span>
               </div>
-              <div className="flex gap-2 text-sm text-gray-600">
-                <span className="font-semibold text-black">Services:</span>
+              <div className="flex gap-2 text-sm text-[#F4F7F5]/70">
+                <span className="font-semibold text-[#F4F7F5]">Services:</span>
                 <span>{client.services?.length || 0}</span>
               </div>
               <div className="flex gap-2 mt-4">
@@ -157,7 +157,7 @@ export default function ClientsPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => router.push(`/admin/clients/${client._id}`)}
-                  className="flex-1 border-sky-200 bg-white text-black hover:bg-sky-50"
+                  className="flex-1 border-[#1F2329] bg-[#1A1D21] text-[#008CE2] hover:bg-[#1F2329]"
                 >
                   <Pencil className="w-4 h-4 mr-2" />
                   Edit
@@ -178,12 +178,12 @@ export default function ClientsPage() {
       </div>
 
       {clients.length === 0 && (
-        <Card className="border-sky-200 bg-white shadow-lg shadow-sky-200/30">
+        <Card className="border-[#1F2329] bg-[#0F1113]/80 shadow-lg shadow-[#008CE2]/20 animate-fade-in-up">
           <CardContent className="py-12 text-center">
-            <p className="text-gray-600 mb-4">No clients found</p>
+            <p className="text-[#F4F7F5]/70 mb-4">No clients found</p>
             <Button
               onClick={() => router.push("/admin/clients/new")}
-              className="bg-sky-500 text-white hover:bg-sky-600"
+              className="bg-[#008CE2] text-white hover:bg-[#06B9D0] transition-all duration-300"
             >
               <Plus className="w-4 h-4 mr-2" />
               Add First Client
@@ -193,16 +193,16 @@ export default function ClientsPage() {
       )}
 
       <AlertDialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent>
+        <AlertDialogContent className="bg-[#0F1113] border-[#1F2329]">
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogTitle className="text-[#F4F7F5]">Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription className="text-[#F4F7F5]/80">
               This action cannot be undone. This will permanently delete the client account and
               remove their data from the server.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel disabled={deleting}>Cancel</AlertDialogCancel>
+            <AlertDialogCancel disabled={deleting} className="border-[#1F2329] hover:bg-[#1A1D21] text-[#F4F7F5]">Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDelete}
               disabled={deleting}
